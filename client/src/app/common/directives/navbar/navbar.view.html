@@ -1,0 +1,8 @@
+<ul class="navbar">
+	<li  ng-repeat = "menuItem in vm.menuItems">
+		<a class = "menu-item" ng-click = "vm.changeTab(menuItem)" ng-class = "{'active': vm.activeTab === menuItem.toLowerCase()}" ui-sref="{{menuItem | lowercase}}">
+			{{menuItem}}
+		</a>
+	</li>
+	<div class="totalPrice">{{vm.totalPrice}}</div>
+</ul>
