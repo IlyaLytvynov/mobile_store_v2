@@ -1,5 +1,5 @@
 <div class="catalog-item col-lg-4 col-md-4 col-sm-6 col-xs-12"  ng-repeat = "item in vm.items">
-  <a ui-sref="details({id: item._id})">
+  <a ui-sref="details({id: item._id})" class="item-wrapper">
     <div class="catalog-item_wrapper">
       <div class="catalog-item_img">
         <img ng-src="{{item.imgUrl}}" alt="img description">

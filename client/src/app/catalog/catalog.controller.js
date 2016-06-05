@@ -16,13 +16,10 @@
   			item.imgUrl = constant.baseUrl + item.imgUrl;
   			return item;
   		});
-
   		vm.items = response;
   	});
 
     vm.addItem = function (newItem) {
-      debugger;
-
       basketModel.addItem(newItem);
     }
 

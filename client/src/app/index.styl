@@ -23,6 +23,31 @@ $icon-font-path = "../../../client/bower_components/bootstrap-stylus/fonts/"
 
   img.pull-right
     width 50px
+    
+
+fontColor = #333
+link() 
+  color fontColor
+  text-decoration none
+btnColor = #65001D
+border-radius(x)
+  border-radius x
+  -webkit-border-radius x
+  -moz-border-radius x
+
+.btn.addItem 
+  float right
+  padding 5px 20px
+  background btnColor
+  color white
+  border-radius(3px)
+
+a 
+  link()
+  &:hover 
+    link()
+  &:focus
+    link()
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
@@ -30,3 +55,6 @@ $icon-font-path = "../../../client/bower_components/bootstrap-stylus/fonts/"
  */
 // injector
 // endinjector
+
+
+

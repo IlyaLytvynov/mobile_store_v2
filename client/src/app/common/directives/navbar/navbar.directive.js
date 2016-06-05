@@ -38,8 +38,6 @@
         "Basket"
       ]
 
-      debugger;
-
       $rootScope.$watchCollection('items', function(newValue, oldValue) {
         vm.totalPrice = basketModel.getTotalPrice();
       
@@ -47,9 +45,7 @@
 
       vm.activeTab = vm.menuItems[1].toLowerCase();
 
-      vm.changeTab = function (tabId) {
-        console.log($rootScope.items);
-        debugger;
+      vm.changeTab = function (tabId) {        
         vm.activeTab = tabId.toLowerCase();
       }
 

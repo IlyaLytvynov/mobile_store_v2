@@ -25,8 +25,8 @@
       }).then(function (response) {
         //возвращается новый обьект промис с библиотеки q для того что-бы перерисовать html
         return $q(function (resolve) {
-              resolve(response.data);
-            });
+          resolve(response.data);
+        });
       })
     } 
   }
