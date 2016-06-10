@@ -18,7 +18,6 @@
     phonesModel.getOne($stateParams.id).then(function (response) {
       vm.phone = response;
       vm.phone.images = vm.phone.images.map(function (item) {
-        debugger;
         return vm.baseUrl + item;
       });
     });

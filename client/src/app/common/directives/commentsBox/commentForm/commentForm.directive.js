@@ -8,6 +8,17 @@
         restrict: 'E',
         templateUrl: 'app/common/directives/commentsBox/commentForm/commentForm.view.html',
         controller : Controller,
+        link: function (scope, el, attr){
+          var commentForm = angular.element(el).find('.commentForm-wrapper'),
+              btnOpenForm = angular.element(el).find('.openCommentForm'),
+              closeComForm = angular.element(el).find('.closeIcon');
+          btnOpenForm.on('click', function () { 
+            commentForm.addClass('active');
+          });          
+          closeComForm.on('click', function () {                    
+            commentForm.removeClass('active');
+          });
+        },
         scope: {
           id: '='
         },

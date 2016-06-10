@@ -13,11 +13,9 @@
         controller : Controller,
         link: function (scope, el, attr) {
             var slides = angular.element(el).find('.slide-img'),
-                slidesCount = slides.length;
-
-          
-            debugger; 
-
+                slidesCount = slides.length,
+                prevBtn = angular.element(el).find('.prev'),
+                nextBtn = angular.element(el).find('.next');
         },
         controllerAs : 'vm',
         bindToController: true
@@ -28,11 +26,9 @@
       var vm = this;
 
       vm.baseUrl = constant.baseUrl;
-      console.log(vm.images);
-      console.log('init showSlider');
       $scope.$watch('scope.vm.images', function (newVal) {
-            debugger;
-          })
+            
+      })
     }  
 })();
 

@@ -13,7 +13,6 @@
         url: constant.baseUrl + 'comments/' + id,
         method: 'GET'
       }).then(function (resp) {
-        debugger;
         return resp.data;
       })
     };
@@ -24,7 +23,6 @@
         method: 'POST',
         data: newComment
       }).then(function (resp) {
-        debugger;
         return resp.data;
       })
     }   

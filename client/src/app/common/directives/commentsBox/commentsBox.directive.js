@@ -18,12 +18,11 @@
 
     function Controller (constant, commentsModel) {
       var vm = this;
-      debugger;
       vm.comments = {};
 
       commentsModel.getComments(vm.id).then(function (res) {
-        debugger;
         vm.comments = res;
+        debugger;
       })
     }  
 })();
