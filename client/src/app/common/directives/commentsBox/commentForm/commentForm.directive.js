@@ -27,7 +27,7 @@
       }
     }); 
 
-    function Controller (constant, commentsModel) {
+    function Controller (commentsModel) {
       var vm = this;
 
       vm.newComment = {};

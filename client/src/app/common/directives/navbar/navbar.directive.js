@@ -8,22 +8,23 @@
         restrict: 'E',
         templateUrl: 'app/common/directives/navbar/navbar.view.html',
         controller : Controller,
-        link: function (scope, el, attr) {
-          /*var menu = el.find('ul');
-
-          menu.on('click', function (e) {
-            var menuItems = $(this).find('li');           
+        link : function(scope, el) {
+          var navbar = angular.element(el).find('.navbar'),
+              scrollState = 'top';
+          $(window).scroll(function () {
+            var scrollPos = $(window).scrollTop();
             
-            if(e.target.classList.contains("menu-item")) {              
-              $.each(menuItems, function(i, el) {
-                if($(el).find('a').hasClass('active')){     
-                  $(el).find('a').removeClass('active');
-                };
-              });               
-              $(e.target).addClass('active');
+            if ((scrollPos != 0) && (scrollState === 'top')) {
+              navbar.addClass('scrolledNav');
+              scrollState = 'scrolled';
+            } else if ((scrollPos === 0) && (scrollState === 'scrolled')) {
+              navbar.removeClass('scrolledNav');
+              scrollState = 'top';
             }
-          })*/
-        },
+            
+          });
+
+        },      
         controllerAs : 'vm',
         bindToController: true
       }
@@ -32,18 +33,18 @@
     function Controller ($state, basketModel, $rootScope) {
       var vm = this;
 
-      vm.menuItems = [
+      vm.menuItems = [       
+        "Basket",                
         "About",
         "Catalog",
-        "Basket"
+        "Home"
       ]
 
       $rootScope.$watchCollection('items', function(newValue, oldValue) {
-        vm.totalPrice = basketModel.getTotalPrice();
-      
+        vm.totalPrice = basketModel.getTotalPrice();      
       });
 
-      vm.activeTab = vm.menuItems[1].toLowerCase();
+      vm.activeTab = vm.menuItems[3].toLowerCase();
 
       vm.changeTab = function (tabId) {        
         vm.activeTab = tabId.toLowerCase();

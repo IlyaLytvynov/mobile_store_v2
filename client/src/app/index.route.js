@@ -8,8 +8,14 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('catalog', {
+      .state('home', {
         url: '/',
+        templateUrl: 'app/frontpage/frontpage.view.html',
+        controller: 'FrontpageController',
+        controllerAs: 'vm'
+      })
+      .state('catalog', {
+        url: '/catalog',
         templateUrl: 'app/catalog/catalog.html',
         controller: 'CatalogController',
         controllerAs: 'vm'
@@ -27,7 +33,7 @@
         controllerAs: 'vm'
       })
       .state('basket', {
-        url: '/about',
+        url: '/basket',
         templateUrl: 'app/basket/basket.view.html',
         controller: 'BasketController',
         controllerAs: 'vm'

@@ -1,5 +1,11 @@
 <div class = "container-fluid">
-	<comments-form id = "vm.id"></comments-form>
-	{{vm.comments}}
-	<comment-single></comment-single>	
+	<comments-form id = "vm.id"></comments-form>	
+	<div class="comment-wrapper" ng-repeat = "comment in vm.comments">
+		<div class="comment-name">{{comment.author}}</div>
+		<div class="comment-text">{{comment.text}}</div>
+		<div class="comment-rating">{{comment.item_rating}}</div>
+		<h4>Default</h4>
+
+		<div class="comment-date">{{comment.created_on}}</div>
+	</div>
 </div>

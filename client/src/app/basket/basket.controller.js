@@ -6,7 +6,10 @@
     .controller('BasketController',BasketController);
 
   /** @ngInject */
-  function BasketController(catalogModel, $stateParams) {
-    
+  function BasketController(basketModel, $stateParams) {
+  	var vm = this;
+  	vm.items = [];
+
+  	vm.items = basketModel.getItems();
   }
-})();
+})()

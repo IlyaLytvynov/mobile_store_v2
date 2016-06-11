@@ -6,7 +6,7 @@
     .controller('AboutController', AboutController);
 
   /** @ngInject */
-  function AboutController(catalogModel, $stateParams) {
+  function AboutController($stateParams) {
     
   }
 })();
