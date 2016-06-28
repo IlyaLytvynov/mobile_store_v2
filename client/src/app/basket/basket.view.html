@@ -1,9 +1,35 @@
 <div class="content">
+	<header>Basket</header>
 	<div class="basket-container">
 		<div class="row">
-			{{vm.items}}
+			<div class="basket-item" ng-repeat = "basketItem in vm.items track by $index">
+				<div class="imgWrapper col-lg-4">
+					<div class="basket-item-img">
+						<img ng-src="{{basketItem.imgUrl}}">
+					</div>
+				</div>
+				<div class="contentWrapper col-lg-4">
+					<div class="basket-item-name">
+						{{basketItem.name}}
+					</div>
+					<div class="basket-item-description">
+						{{basketItem.description}}
+					</div>
+					<div class="basket-item-rate">
+						{{basketItem.average_rating}}
+					</div>		
+				</div>
+				<div class="ammountWrapper col-lg-2">
+					<div>Quantity</div>
+					<div class="quantity-field"></div>
+				</div>
+				<div class="priceWrapper col-lg-2">
+					<div class="basket-item-price">
+						{{basketItem.price}}
+					</div>
+				</div>
+					
+			</div>
 		</div>	
-		
-		
 	</div>
 </div>

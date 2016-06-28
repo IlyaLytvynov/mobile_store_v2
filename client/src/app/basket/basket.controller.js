@@ -11,5 +11,6 @@
   	vm.items = [];
 
   	vm.items = basketModel.getItems();
+    debugger;
   }
 })()

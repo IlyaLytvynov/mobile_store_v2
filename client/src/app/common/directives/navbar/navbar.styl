@@ -6,7 +6,7 @@ navFontColor = #aaa
 	right 0
 	border none
 	padding 15px 0	
-	z-index 100
+	z-index 101
 	margin 0
 	width 100%
 	transition(all .5s)
@@ -75,10 +75,22 @@ navFontColor = #aaa
 			float right
 
 .navbar.scrolledNav
-	background rgba(28, 28, 28, 0.5)
+	background rgba(28, 28, 28, 0.8)
 	.navbar-list
 		padding-bottom 0
 		border 0
+	a.active,
+	a:hover
+		color white
+	a:after
+		background white
+	a:hover,
+	a.active
+		.price
+			color white
+		.basket-icon
+			background url("/img/icons/basket-white.png") no-repeat
+			background-size 100%
 	a,
 	.price
 		color white

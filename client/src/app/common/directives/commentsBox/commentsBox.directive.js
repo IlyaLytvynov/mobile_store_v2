@@ -18,10 +18,11 @@
 
     function Controller (constant, commentsModel) {
       var vm = this;
-      vm.comments = {};
+      vm.comments = [];
+      vm.isError = false;
       commentsModel.getComments(vm.id).then(function (res) {
         vm.comments = res.map(function (item) {
-          item.created_on = moment(item.created_on).format('MMMM Do YYYY, h:mm:ss a');
+          item.created_on = moment(item.created_on).format('LL, h:mm');
           return item;
         });
       });
@@ -37,6 +38,17 @@
           {stateOff: 'glyphicon-off'}
         ];
 
+      vm.saveComment = function (commentObject) {
+        debugger;
+        commentsModel.saveComment(commentObject).then(function (newComment) {
+          newComment.created_on = moment(newComment.created_on).format('LL, h:mm');
+          vm.comments.push(newComment);
+        }, function (e) {
+          debugger;
+          vm.isError = true;
+          throw new Error(e);
+        });
+      }
     }  
 })();
 

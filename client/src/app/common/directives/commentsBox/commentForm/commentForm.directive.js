@@ -20,7 +20,8 @@
           });
         },
         scope: {
-          id: '='
+          id: '=',
+          saveFunction: '='
         },
         controllerAs : 'vm',
         bindToController: true
@@ -30,10 +31,13 @@
     function Controller (commentsModel) {
       var vm = this;
 
+      vm.isHidden = true;
+
       vm.newComment = {};
       vm.saveComment = function () {
         vm.newComment.item_id = vm.id;
-        commentsModel.saveComment(vm.newComment);
+        vm.saveFunction(vm.newComment);
+        vm.newComment = {};
       }
     }  
 })();

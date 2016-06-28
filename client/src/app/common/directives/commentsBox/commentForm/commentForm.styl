@@ -2,7 +2,7 @@
 	position relative
 .commentForm-wrapper
 	padding 20px 30px
-	border 4px solid rgba(101,0,29,0.1)
+	border 4px solid rgba(244,145,30, 0.3)
 	border-radius(3px)
 	margin-bottom 20px
 	position absolute
@@ -22,7 +22,7 @@
 		float right
 	input, textarea
 		border none
-		background rgba(101,0,29,0.1)
+		background rgba(244,145,30, 0.3)
 		padding 10px
 		border-radius(0px)
 		width 100%
@@ -33,12 +33,14 @@
 	.comment-label
 		margin-bottom 5px	
 	.addComment
-		background btnColor
+		background yellowColor
 		color white		
 		width 100%
+		padding 10px
 .commentForm-wrapper.active
 	visibility visible
 	opacity 1
+	z-index 2
 
 .description
 	p
@@ -46,13 +48,13 @@
 	p:last-child
 		margin-bottom 0
 .btn.openCommentForm
-	border 2px solid blueBtnColor
-	color blueBtnColor
+	border 2px solid yellowColor
+	color yellowColor
 	width 300px
 	padding 10px
 	margin 20px auto
 	
 .btn.openCommentForm.active,
 .btn.openCommentForm:hover
-	color btnColor
-	border 2px solid btnColor
+	color white
+	background yellowColor

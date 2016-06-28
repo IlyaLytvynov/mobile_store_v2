@@ -1,11 +1,18 @@
 <div class = "container-fluid">
-	<comments-form id = "vm.id"></comments-form>	
-	<div class="comment-wrapper" ng-repeat = "comment in vm.comments">
-		<div class="comment-name">{{comment.author}}</div>
-		<div class="comment-text">{{comment.text}}</div>
-		<div class="comment-rating">{{comment.item_rating}}</div>
-		<h4>Default</h4>
-
-		<div class="comment-date">{{comment.created_on}}</div>
+	<div class="error-box" ng-if = "vm.isError">Error accured</div>
+	<comments-form id = "vm.id" save-function = "vm.saveComment"></comments-form>
+	<div class="comments">
+		<div class="row">
+			<div class="comment-wrapper" ng-repeat = "comment in vm.comments">
+				<div class="left-col col-lg-4">
+					<div class="comment-name">{{comment.author}}</div>
+					<div class="comment-date">{{comment.created_on}}</div>
+				</div>
+				<div class="right-col col-lg-8">
+					<div class="comment-text">{{comment.text}}</div>
+					<div class="comment-rating">{{comment.item_rating}}</div>
+				</div>	
+			</div>
+		</div>		
 	</div>
 </div>
