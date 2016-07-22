@@ -23,6 +23,7 @@
 
       vm.activeImg = vm.images && vm.images[0];
 
+
       vm.previewImg = function (img) {
         vm.activeImg = img;
       };
@@ -34,7 +35,7 @@
       $scope.$watch(function () {
         return vm.images;
       }, function (newVal) {
-        vm.activeImg = newVal && vm.images[0]        
+        vm.activeImg = newVal && vm.images[0]              
       });
     }  
 })();
