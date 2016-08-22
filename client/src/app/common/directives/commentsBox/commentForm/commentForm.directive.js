@@ -1,44 +1,44 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('client')
-    .directive('commentsForm', function() {
-      return {
-        restrict: 'E',
-        templateUrl: 'app/common/directives/commentsBox/commentForm/commentForm.view.html',
-        controller : Controller,
-        link: function (scope, el, attr){
-          var commentForm = angular.element(el).find('.commentForm-wrapper'),
-              btnOpenForm = angular.element(el).find('.openCommentForm'),
-              closeComForm = angular.element(el).find('.closeIcon');
-          btnOpenForm.on('click', function () { 
-            commentForm.addClass('active');
-          });          
-          closeComForm.on('click', function () {                    
-            commentForm.removeClass('active');
-          });
-        },
-        scope: {
-          id: '=',
-          saveFunction: '='
-        },
-        controllerAs : 'vm',
-        bindToController: true
-      }
-    }); 
+    angular
+        .module('client')
+        .directive('commentsForm', function () {
+            return {
+                restrict: 'E',
+                templateUrl: 'app/common/directives/commentsBox/commentForm/commentForm.view.html',
+                controller: Controller,
+                link: function (scope, el, attr) {
+                    var commentForm = angular.element(el).find('.commentForm-wrapper'),
+                        btnOpenForm = angular.element(el).find('.openCommentForm'),
+                        closeComForm = angular.element(el).find('.closeIcon');
+                    btnOpenForm.on('click', function () {
+                        commentForm.addClass('active');
+                    });
+                    closeComForm.on('click', function () {
+                        commentForm.removeClass('active');
+                    });
+                },
+                scope: {
+                    id: '=',
+                    saveFunction: '='
+                },
+                controllerAs: 'vm',
+                bindToController: true
+            }
+        });
 
-    function Controller (commentsModel) {
-      var vm = this;
+    function Controller(commentsModel) {
+        var vm = this;
 
-      vm.isHidden = true;
+        vm.isHidden = true;
 
-      vm.newComment = {};
-      vm.saveComment = function () {
-        vm.newComment.item_id = vm.id;
-        vm.saveFunction(vm.newComment);
         vm.newComment = {};
-      }
-    }  
+        vm.saveComment = function () {
+            vm.newComment.item_id = vm.id;
+            vm.saveFunction(vm.newComment);
+            vm.newComment = {};
+        }
+    }
 })();
 

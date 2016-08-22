@@ -1,13 +1,12 @@
 <div id="carousel" class="col-lg-6">
     <div class="carousel-item">
-        <img class = "carousel-img-large" ng-src={{vm.activeImg}}>
+        <img class="carousel-img-large" ng-src={{vm.activeImg}}>
     </div>
-    <div class="carousel-controls-wrapper" >
-    	<div class="carousel-controls-container" ng-style="vm.width(vm.images.length)">
-    		<div class="carousel-controls fade-img" ng-mouseover = "vm.previewImg(img)" ng-repeat = "img in vm.images">
-    			<img ng-src="{{img}}" />
-    		</div> 
-    	</div>    	
+    <div class="carousel-controls-wrapper">
+        <div class="carousel-controls-container" ng-style="vm.width(vm.images.length)">
+            <div class="carousel-controls fade-img" ng-click="vm.previewImg(img)" ng-repeat="img in ::vm.images">
+                <img class="carousel_controls_img" ng-src="{{::img}}"/>
+            </div>
+        </div>
     </div>
-       
 </div>

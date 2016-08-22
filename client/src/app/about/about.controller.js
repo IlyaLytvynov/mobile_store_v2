@@ -1,12 +1,12 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('client')
-    .controller('AboutController', AboutController);
+    angular
+        .module('client')
+        .controller('AboutController', AboutController);
 
-  /** @ngInject */
-  function AboutController($stateParams) {
-    
-  }
+    /** @ngInject */
+    function AboutController($stateParams) {
+
+    }
 })();

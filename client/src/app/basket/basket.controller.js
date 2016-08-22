@@ -1,16 +1,15 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('client')
-    .controller('BasketController',BasketController);
+    angular
+        .module('client')
+        .controller('BasketController', BasketController);
 
-  /** @ngInject */
-  function BasketController(basketModel, $stateParams) {
-  	var vm = this;
-  	vm.items = [];
+    /** @ngInject */
+    function BasketController(basketModel, $stateParams) {
+        var vm = this;
+        vm.items = [];
 
-  	vm.items = basketModel.getItems();
-    debugger;
-  }
-})()
+        vm.items = basketModel.getItems();
+    }
+})();

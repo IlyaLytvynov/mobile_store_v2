@@ -1,7 +1,7 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('client', ['ngAnimate', 'ui.router', 'ui.bootstrap']);
+    angular
+        .module('client', ['ngAnimate', 'ui.router', 'ui.bootstrap']);
 
 })();

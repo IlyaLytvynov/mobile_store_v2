@@ -1,15 +1,15 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('client')
-    .run(runBlock);
+    angular
+        .module('client')
+        .run(runBlock);
 
-  /** @ngInject */
-  function runBlock($log, $location) {
-    $location.path('/');
-    
-    $log.debug('runBlock end');
-  }
+    /** @ngInject */
+    function runBlock($log, $location) {
+        $location.path('/');
+
+        $log.debug('runBlock end');
+    }
 
 })();

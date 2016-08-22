@@ -12,7 +12,6 @@ $icon-font-path = "../../../client/bower_components/bootstrap-stylus/fonts/"
 // bower:styl
 // endbower
 
-
 fontColor = #333
 redColor = #4A0015
 yellowColor = #F4911E
@@ -21,94 +20,99 @@ bgNavbar = #ececec
 
 fontHeader = 24px
 
-link() 
-  color fontColor
-  text-decoration none
+link()
+	color fontColor
+	text-decoration none
 
 centerImg()
-  position absolute
-  top 0
-  left 0
-  bottom 0
-  right 0
-  margin auto
-  max-width 100%
-  max-height 100%
+	position absolute
+	top 0
+	left 0
+	bottom 0
+	right 0
+	margin auto
+	max-width 100%
+	max-height 100%
 
 border-radius(x)
-  border-radius x
-  -webkit-border-radius x
-  -moz-border-radius x
+	border-radius x
+	-webkit-border-radius x
+	-moz-border-radius x
 
 transition(x)
-  -moz-transition x
-  -o-transition x
-  -webkit-transition x
-  transition x
+	-moz-transition x
+	-o-transition x
+	-webkit-transition x
+	transition x
 
 .browsehappy
-  margin 0.2em 0
-  background #ccc
-  color #000
-  padding 0.2em 0
+	margin 0.2em 0
+	background #ccc
+	color #000
+	padding 0.2em 0
 
 .thumbnail
-  height 200px
-  img.pull-right
-    width 50px
+	height 200px
+	img.pull-right
+		width 50px
 
 input:focus,
 textarea:focus
-  outline none
+	outline none
+
 .closeIcon
-  color #4A0015
-  font-size 24px
-  height 27px
-  padding 3px
-  line-height 15px;
-  opacity 0.8
-  cursor pointer
+	color #4A0015
+	font-size 24px
+	height 27px
+	padding 3px
+	line-height 15px;
+	opacity 0.8
+	cursor pointer
+
 .closeIcon:hover
-  opacity 1
+	opacity 1
+
 .content
-  padding-top 59px
+	padding-top 59px
 
 .btn
-  padding 5px 20px   
-  text-align center
-  font-weight bold
-  text-transform upperCase
-  border-radius(0px)
-  color white  
-  display block
-  &:hover
-    color white
+	padding 5px 20px
+	text-align center
+	font-weight bold
+	text-transform upperCase
+	border-radius(0px)
+	color white
+	display block
+	&:hover
+		color white
+
 .btn.active,
 .btn:active
-  box-shadow none
-.btn.addItem 
-  float right
-  background redColor
-header 
-  background redColor
-  text-transform upperCase
-  font-weight bold
-  font-size fontHeader
-  color white
-  padding 10px 25px
-  margin-bottom 20px
- 
+	box-shadow none
 
-a 
-  link()
-  &:hover 
-    link()
-  &:focus
-    link()
+.btn.addItem
+	float right
+	background redColor
 
-.container-fluid 
-  padding 0 25px
-  overflow hidden
+header
+	background redColor
+	text-transform upperCase
+	font-weight bold
+	font-size fontHeader
+	color white
+	padding 10px 25px
+	margin-bottom 20px
+
+a
+	link()
+	&:hover
+		link()
+	&:focus
+		link()
+
+.container-fluid
+	padding 0 25px
+	overflow hidden
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

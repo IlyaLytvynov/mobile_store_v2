@@ -1,15 +1,15 @@
 <div class="navbar">
-	<ul class="navbar-list">		
-		<li ng-repeat = "menuItem in vm.menuItems">
-			<a class = "menu-item" ng-click = "vm.changeTab(menuItem)" 
-								   ng-class = "{'active': vm.activeTab === menuItem.toLowerCase()}" 
-								   ui-sref="{{menuItem | lowercase}}">
-				<div class="totalPrice" ng-if="menuItem.toLowerCase() == 'basket'">					
-					<div class="price">{{vm.totalPrice | currency}}</div>
-					<div class="basket-icon"></div> 
-				</div>
-				<span>{{menuItem}}</span>
-			</a>
-		</li>		
-	</ul>	
+    <ul class="navbar-list">
+        <li ng-repeat="menuItem in vm.menuItems">
+            <a class="menu-item" ng-click="vm.changeTab(menuItem)"
+               ng-class="{'active': vm.activeTab === menuItem.toLowerCase()}"
+               ui-sref="{{menuItem | lowercase}}">
+                <div class="totalPrice" ng-if="menuItem.toLowerCase() == 'basket'">
+                    <div class="price">{{vm.totalPrice | currency}}</div>
+                    <div class="basket-icon"></div>
+                </div>
+                <span>{{menuItem}}</span>
+            </a>
+        </li>
+    </ul>
 </div>

@@ -1,12 +1,12 @@
- (function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('client')
-    .controller('FrontpageController', MainController);
+    angular
+        .module('client')
+        .controller('FrontpageController', MainController);
 
-  /** @ngInject */
-  function MainController() {
-  	
-  }
+    /** @ngInject */
+    function MainController() {
+
+    }
 })();
