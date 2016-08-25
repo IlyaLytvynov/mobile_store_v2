@@ -1,12 +1,10 @@
 /* global malarkey:false, moment:false */
-(function () {
-    'use strict';
+(function() {
+  'use strict';
 
-    angular
-        .module('client')
-        .service('constant', function () {
-            return {
-                baseUrl: "http://localhost:4001/api/v1/"
-            }
-        })
+  angular
+    .module('client')
+    .constant('malarkey', malarkey)
+    .constant('moment', moment);
+
 })();
