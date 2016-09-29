@@ -6,7 +6,7 @@ const config = {
     entry: {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
-        'app': './src/app.ts'
+        'app': './src/main.ts'
     },
 
     resolve: {
@@ -20,24 +20,40 @@ const config = {
         chunkFilename: '[id].[hash].chunk.js'
     },
 
+    htmlLoader: {
+        minimize: false // workaround for ng2
+    },
+
     module: {
         loaders: [
             {
                 test: /\.ts$/,
-                loader: 'ts'
+                loaders: ['ts', 'angular2-template-loader']
             },
             {
                 test: /\.html$/,
-                loader: 'html'
+                loader: 'html-loader'
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 loader: 'file?name=assets/[name].[hash].[ext]'
+            },
+            {
+                test: /\.css$/,
+                exclude: './src/components/',
+                loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+            },
+            {
+                test: /\.css$/,
+                include: './src/components/',
+                loader: 'raw'
             }
         ]
     },
 
     plugins: [
+        new webpack.NoErrorsPlugin(),
+        new ExtractTextPlugin('[name].css'),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),
