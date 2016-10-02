@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Hero } from "./hero.model";
-debugger;
-console.log(module);
+
 @Component({
     selector: "toh-heroes",
     templateUrl: "./heroes.component.html",
@@ -10,6 +9,7 @@ console.log(module);
 
 export class HeroesComponent implements OnInit {
     heroes: Hero[];
+    selectedHero: Hero;
 
     constructor() {
     }
@@ -25,8 +25,8 @@ export class HeroesComponent implements OnInit {
         ];
     }
 
-    onSelect(hero) {
-
+    onSelect(hero: Hero) {
+        this.selectedHero = hero;
     }
 
 }
