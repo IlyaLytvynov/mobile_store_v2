@@ -5,7 +5,7 @@ console.log(module);
 @Component({
     selector: 'toh-heroes',
     templateUrl: './heroes.component.html',
-    styleUrls: ['./heroes.component.css'.toString()]
+    styleUrls: ['./heroes.styl']
 })
 
 export class HeroesComponent implements OnInit {

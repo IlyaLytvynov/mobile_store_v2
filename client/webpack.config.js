@@ -39,15 +39,19 @@ const config = {
                 loader: 'file?name=assets/[name].[hash].[ext]'
             },
             {
-                test: /\.css$/,
-                exclude: './src/components/',
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-            },
-            {
-                test: /\.css$/,
-                include: './src/components/',
-                loader: 'raw'
+                test: /\.styl$/,
+                loaders: ['css-to-string', 'css?sourceMap', 'resolve-url', 'stylus']
             }
+            // {
+            //     test: /\.css$/,
+            //     exclude: './src/components/',
+            //     loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+            // },
+            // {
+            //     test: /\.css$/,
+            //     include: './src/components/',
+            //     loader: 'raw'
+            // }
         ]
     },
 
@@ -63,8 +67,6 @@ const config = {
         })
     ]
 };
-
-console.log(process.env.NODE_ENV );
 
 if (process.env.NODE_ENV === 'dev') {
     config.devtool = 'source-map';
