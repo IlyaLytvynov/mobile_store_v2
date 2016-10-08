@@ -42,16 +42,6 @@ const config = {
                 test: /\.styl$/,
                 loaders: ['css-to-string', 'css?sourceMap', 'resolve-url', 'stylus']
             }
-            // {
-            //     test: /\.css$/,
-            //     exclude: './src/components/',
-            //     loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-            // },
-            // {
-            //     test: /\.css$/,
-            //     include: './src/components/',
-            //     loader: 'raw'
-            // }
         ]
     },
 

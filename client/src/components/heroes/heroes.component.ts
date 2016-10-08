@@ -1,28 +1,26 @@
 import { Component, OnInit } from "@angular/core";
 import { Hero } from "./hero.model";
+import {HeroService} from "./hero.service";
+import "rxjs/add/operator/map";
+import { subscribeOn } from "rxjs/operator/subscribeOn";
 
 @Component({
     selector: "toh-heroes",
     templateUrl: "./heroes.component.html",
-    styleUrls: ["./heroes.styl"]
+    styleUrls: ["./heroes.styl"],
+    providers: [HeroService]
 })
 
 export class HeroesComponent implements OnInit {
     heroes: Hero[];
     selectedHero: Hero;
 
-    constructor() {
+    constructor(private heroesService: HeroService) {
     }
 
     ngOnInit() {
-        this.heroes = [
-            {"id": 11, "name": "Chewbacca"},
-            {"id": 12, "name": "Rey"},
-            {"id": 13, "name": "Finn"},
-            {"id": 14, "name": "Han Solo"},
-            {"id": 15, "name": "Luke"},
-            {"id": 16, "name": "Leia"},
-        ];
+        // this.heroes = this.heroesService.getHeroes();
+        this.heroesService.getHeroes().subscribe(heroes => this.heroes = heroes);
     }
 
     onSelect(hero: Hero) {
