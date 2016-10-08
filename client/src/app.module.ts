@@ -2,10 +2,10 @@ import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule }   from "@angular/forms";
 import { HttpModule, JsonpModule } from "@angular/http";
-import { routing, appRoutingProviders }  from "./app.routing";
+import { HomeModule} from "./components/home/home.module";
+import { AppRouting} from "./components/app.routing";
 
-import { AppComponent }  from "./app.component";
-import { HomeComponent }  from "./home/home.component";
+import { AppComponent }  from "./components/app.component";
 
 @NgModule({
     imports: [
@@ -13,15 +13,11 @@ import { HomeComponent }  from "./home/home.component";
         FormsModule,
         HttpModule,
         JsonpModule,
-        routing
+        HomeModule,
+        AppRouting
     ],
-    declarations: [
-        AppComponent,
-        HomeComponent
-    ],
-    providers: [
-        appRoutingProviders
-    ],
+    declarations: [AppComponent],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

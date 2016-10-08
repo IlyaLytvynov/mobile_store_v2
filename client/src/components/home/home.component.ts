@@ -4,11 +4,9 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "my-app",
-    template: `
-        <h1>{{title}}</h1>
-        
-    `
+    selector: "home",
+    templateUrl: "./home.component.html",
+    styleUrls: ["./home.styl"]
 })
 
 export class HomeComponent {
