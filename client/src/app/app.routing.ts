@@ -1,14 +1,15 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { HomeComponent } from "./home.component";
-
 const routes: Routes = [
-    { path: "home", component: HomeComponent },
+    { path: "", redirectTo: "/catalog", pathMatch: "full" },
+
+    // lazy loaded modules
+    { path: "details/:id", loadChildren: "../+details/details.module#DetailsModule" }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class AppRouting { }

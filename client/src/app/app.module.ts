@@ -2,10 +2,11 @@ import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule }   from "@angular/forms";
 import { HttpModule, JsonpModule } from "@angular/http";
-import { HomeModule} from "./components/home/home.module";
-import { AppRouting} from "./components/app.routing";
+import { CatalogModule} from "../catalog/catalog.module";
+import { AppRouting} from "./app.routing";
 
-import { AppComponent }  from "./components/app.component";
+import { AppComponent }  from "./app.component";
+import { CommonModule }  from "../common/common.module";
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { AppComponent }  from "./components/app.component";
         FormsModule,
         HttpModule,
         JsonpModule,
-        HomeModule,
+        CatalogModule,
+        CommonModule,
         AppRouting
     ],
     declarations: [AppComponent],
