@@ -3,7 +3,7 @@ export default routesConfig;
 /** @ngInject */
 function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true).hashPrefix('!');
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/app/phones');
 
     $stateProvider
         .state('app', {
@@ -11,12 +11,12 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
             component: 'app'
         })
         .state('app.home', {
-            url: '/home',
+            url: '/phones',
             component: 'home'
         })
         .state('app.homeDetails', {
-            url: '/home/:id',
-            component: 'home'
+            url: '/phones/:id',
+            component: 'details'
         })
         .state('app.about', {
             url: '/about',

@@ -1,18 +1,28 @@
 /**
  * Created by IlyaLitvinov on 15.10.16.
  */
+import "./home.styles.css";
 class HomeController {
-    constructor() {
+    /** @ngInject */
+    constructor(phonesModel) {
         console.log("home created!");
         this.header = "Home page";
-        this.menuItems = [1,2,3,4,5,6,7,8,9];
+        this._model = phonesModel;
+        this._model.getItems().then((data) => {
+            this.phones = data.map((item) => {
+                item.imgUrl = "http://localhost:4001/api/v1/" + item.imgUrl;
+                return item;
+            });
+        })
     }
 }
 
 const HomeComponent = {
     template: `
-        <h1>{{$ctrl.header}}</h1>
-        <menu some-cool-magic-data="$ctrl.menuItems"></menu>
+    
+       <div class="home__wrapper">
+        <preview data="phone" ng-repeat="phone in $ctrl.phones"></preview>
+        </div>  
     `,
     controller: HomeController
 };
