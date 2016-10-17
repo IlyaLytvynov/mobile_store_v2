@@ -1,6 +1,7 @@
 /**
  * Created by IlyaLitvinov on 10.10.16.
  */
+/// <reference path="../../../typings/index.d.ts"/>
 import { Component, OnInit } from "@angular/core";
 import { PhoneService} from "../../common/services/phones.service";
 
