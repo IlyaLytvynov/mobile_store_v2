@@ -11,9 +11,13 @@ import { PhoneService} from "../../common/services/phones.service";
 })
 
 export class CatalogComponent {
-    constructor (private t: PhoneService) {
-        console.log(`from Catalog ${this.t.toCount()}`);
-        console.log(`from catalog ${this.t.toCount()}`);
-        console.log(`from catalog ${this.t.toCount()}`);
+    public data: any[];
+
+    constructor (private model: PhoneService) {
+        this.model.fetchAll().subscribe((resp) => {
+            this.data = resp;
+        }, (err) => {
+            debugger;
+        });
     }
 }

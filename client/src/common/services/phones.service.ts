@@ -10,16 +10,20 @@ import "rxjs/add/operator/catch";
 
 @Injectable()
 export class PhoneService {
-    private baseUrl = "http:/localhost:4001/api/v1/phones";
+    private baseUrl = "http://localhost:4001/api/v1/phones";
     private i: number = 0;
     constructor(private http: Http) {
         console.log("Hello service");
     };
 
     fetchAll() {
+        debugger;
         return this.http.get(this.baseUrl)
-            .map((res: Response) => res.json())
-            .catch((error: any) => Observable.throw(error.json().error || "Server error"));
+            .map((res: Response) => {
+                debugger;
+                return res.json();
+            })
+            .catch((error: any) => Observable.throw(error.message || "Server error"));
     }
     toCount() {
         return  this.i++;
