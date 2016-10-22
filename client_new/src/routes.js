@@ -16,7 +16,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         })
         .state('app.homeDetails', {
             url: '/phones/:id',
-            component: 'details'
+            component: 'phoneDetails'
         })
         .state('app.about', {
             url: '/about',

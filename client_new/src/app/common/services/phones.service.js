@@ -15,10 +15,13 @@ class PhonesModel {
 
         })
     }
+    getOne(id) {
+        return this.$http.get(baseUrl + "phones/" + id).then((response) => {
+            debugger;
+            return response.data;
+        }, (e)=> {
 
-    item(newItem) {
-        debugger;
-        this.data.push(newItem);
+        })
     }
 }
 
