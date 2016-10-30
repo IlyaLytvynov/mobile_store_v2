@@ -14,8 +14,8 @@ const _load = env => {
     if(!_configs[env]) {
         throw 'Can\'t find environments see _config object';
     }
-    var conf = _configs && _.merge(_configs[env](__dirname), _configs["global"](__dirname));
-    return _configs["global"](__dirname);
+
+    return _configs && _.merge(_configs[env](__dirname), _configs["global"](__dirname));
 };
 
 /**
