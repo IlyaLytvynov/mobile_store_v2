@@ -1,3 +1,13 @@
-const t = "Hello wolrld";
+import angular from "angular";
+import uiRouter from 'angular-ui-router';
 
-console.log(t);
+import routerConfig from "./app.routes";
+
+import MainPageComponent from "./main/main.component";
+
+import "./app.styl";
+
+angular.module("client", [uiRouter])
+    .config(routerConfig)
+    .component("main", MainPageComponent)
+    .run();
