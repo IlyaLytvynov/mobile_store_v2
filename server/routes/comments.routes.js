@@ -1,9 +1,3 @@
-/**
- * Created by IlyaLitvinov on 13.03.16.
- */
-/**
- * Created by IlyaLitvinov on 13.03.16.
- */
 'use strict';
 const commentsController = require('../libs/controllers/comments.controller');
 const phonesController = require('../libs/controllers/phones.controller');

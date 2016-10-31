@@ -1,7 +1,4 @@
-/**
- * Created by IlyaLitvinov on 13.03.16.
- */
-    'use strict';
+'use strict';
 const fs = require('fs');
 const path = require('path');
 const Phones = require('../libs/controllers/phones.controller');

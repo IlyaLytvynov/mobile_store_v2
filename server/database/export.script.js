@@ -33,7 +33,7 @@ class CollectionCreator {
 
   createDb () {
     return this.readDir('phones').then(() => {
-        return 'Successfully created!';
+        console.log('Successfully created!');
       })
       .catch(e => {
         console.log(e);
@@ -50,7 +50,6 @@ class CollectionCreator {
     });
 
     return Promise.all(promises).then(res => {
-
       return res;
     }).catch(e => {
       console.log(e);
@@ -81,9 +80,10 @@ class CollectionCreator {
         });
 
         return Promise.all(promises).then(data => {
+          return this.importToDb(data).then(() => {
+            res(data);
+          });
 
-          this.importToDb(data);
-          res(data);
         }).catch(e => {
           rej(e);
         });
@@ -91,7 +91,6 @@ class CollectionCreator {
     });
   }
 }
-
 
 const t = new CollectionCreator('phones');
 
