@@ -7,10 +7,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = _path => {
     //define local variables
     var dependencies = Object.keys(require(_path + '/package').dependencies);
-    var rootAssetPath = _path + 'app';
-
-    console.log(_path);
-    console.log(dependencies);
     return {
         //enter point
         entry: {
@@ -31,6 +27,13 @@ module.exports = _path => {
         },
 
         module: {
+            preLoaders: [
+                {
+                    test: /\.js$/,
+                    loader: 'eslint-loader',
+                    exclude: [/node_modules/]
+                }
+            ],
             loaders: [
                 {
                     loader: 'babel',
@@ -73,12 +76,6 @@ module.exports = _path => {
         },
 
         plugins: [
-            // new webpack.optimize.CommonsChunkPlugin('vendors', 'assets/js/vendors.[hash].js'),
-            // Этот файл будет являться "корневым" index.html
-            // new Manifest(path.join(_path + '/config', 'manifest.json'), {
-            //     rootAssetPath: rootAssetPath,
-            //     ignorePaths: ['.DS_Store']
-            // }),
             new ExtractTextPlugin( "bundle.css" ),
             new CleanWebpackPlugin(["build"], {
                 root: _path,

@@ -1,6 +1,9 @@
 /**
  * Created by IlyaLitvinov on 31.10.16.
  */
+import template from "./main-page.html";
+import "./main.styl";
+
 class MainPageController {
     constructor() {
         console.log("Main page is active");
@@ -8,7 +11,7 @@ class MainPageController {
 }
 
 const MainPageComponent =  {
-        template: require("./main-page.html"),
+        template,
         controller: MainPageController
 };
 

@@ -1,19 +1,16 @@
 'use strict';
 
-/**
- * Devconfig
- */
 module.exports = function(_path) {
-    console.log("33");
     return {
         context: _path,
         debug: true,
-        devtool: 'eval',
+        devtool: 'source-map',
         devServer: {
             contentBase: './build',
-            info: true,
+            info: false,
             hot: false,
-            inline: true
+            inline: true,
+            historyApiFallback: true
         }
     }
 };
