@@ -1,3 +1,10 @@
+#Install client
+Переходим в папку client в командной строке/терминале выполняем:
+    - глобальную установку webpack npm i -g webpack,
+    - установку локальных библиотек npm i
+    - в папке client выполняем npm run dev запустится сервер разработки
+    - в браузере переходим по адресу http://localhost:8080
+
 #Install server
 - Установка монго с официального сайта в С:\MongoDb
 - Создвть папку C:\MongoDb\data\db
@@ -8,12 +15,11 @@
     !!! Консоль не закрываем
 - делаем npm i в папку server
 - Переходим в server/database
-- Выполняем команду node export.script.js, comments.export.js
+- Выполняем команду node export.script.js, node comments.export.js
 - Для проверки на маке\линукс mongo mobilestorev2-dev
     >db.phones.find().pretty()
      выведется огромный json
-
-   на windows заходим   С:\MongoDb\Server\3.2\bin выполняем команду mongo mobilestorev2-dev в консоли
+на windows заходим  С:\MongoDb\Server\3.2\bin выполняем команду mongo mobilestorev2-dev в консоли
 
 
 #Запросы к серверу
@@ -31,3 +37,4 @@ body: {
 #Шаблоны
 https://wireframe.cc/PfAd8i - детали
 https://wireframe.cc/OCPbOo  - главная
+
