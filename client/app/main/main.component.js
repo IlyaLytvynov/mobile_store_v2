@@ -6,12 +6,12 @@ import "./main.styl";
 
 class MainPageController {
     constructor() {
-        console.log("Main page is active");
+        this.header = "Hello world"
     }
 }
 
 const MainPageComponent =  {
-        template,
+        template: template,
         controller: MainPageController
 };
 
