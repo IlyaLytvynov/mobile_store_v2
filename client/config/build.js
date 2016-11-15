@@ -1,8 +1,6 @@
 'use strict';
+const path = require("path");
 
-/**
- * Production config
- */
 module.exports = function(_path) {
     console.log(_path);
     return {
@@ -10,7 +8,7 @@ module.exports = function(_path) {
         debug: true,
         devtool: 'cheap-source-map',
         output: {
-            publicPath: '/'
+            publicPath: path.resolve('/')
         }
     }
-}
+};

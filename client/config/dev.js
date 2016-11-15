@@ -1,4 +1,5 @@
 'use strict';
+const path = require("path");
 
 module.exports = function(_path) {
     return {
@@ -6,7 +7,7 @@ module.exports = function(_path) {
         debug: true,
         devtool: 'source-map',
         devServer: {
-            contentBase: './build',
+            contentBase: path.normalize('./build'),
             info: false,
             hot: false,
             inline: true,

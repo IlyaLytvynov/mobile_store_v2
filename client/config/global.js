@@ -6,11 +6,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = _path => {
     //define local variables
-    var dependencies = Object.keys(require(_path + '/package').dependencies);
+    var dependencies = Object.keys(require(path.normalize(_path + '/package')).dependencies);
     return {
         //enter point
         entry: {
-            application: _path + "/app/app.js",
+            application: path.normalize(_path + "/app/app.js"),
             vendors: dependencies
         },
 
@@ -78,7 +78,7 @@ module.exports = _path => {
         plugins: [
             new ExtractTextPlugin( "bundle.css" ),
             new CleanWebpackPlugin(["build"], {
-                root: _path,
+                root: path.normalize(_path),
                 verbose: true,
                 dry: false
             }),

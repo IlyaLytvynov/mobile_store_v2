@@ -1,10 +1,11 @@
 "use strict";
 const _ = require("lodash");
+const path = require("path");
 
 const _configs = {
-    global: require(__dirname + "/config/global"),
-    dev: require(__dirname + "/config/dev"),
-    build: require(__dirname + "/config/build")
+    global: require(path.normalize(__dirname + "/config/global")),
+    dev: require(path.normalize(__dirname + "/config/dev")),
+    build: require(path.normalize(__dirname + "/config/build"))
 };
 
 const _load = env => {
