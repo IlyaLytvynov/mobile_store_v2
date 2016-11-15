@@ -13,6 +13,13 @@ class PhoneModel {
                 return resp.data;
             });
     }
+
+    getOne(id) {
+        return this.$http.get(this.baseUrl + "/" + id)
+            .then((resp) => {
+                return resp.data;
+            });
+    }
 }
 
 

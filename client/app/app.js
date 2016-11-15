@@ -6,11 +6,14 @@ import routerConfig from "./app.routes";
 import MainPageComponent from "./main/main.component";
 import CatalogPageComponent from "./catalog/catalog.component";
 import AboutPageComponent from "./about/about.component";
+import DetailsPageComponent from "./details/details.component";
 
 import NavbarComponent from "./common/components/navbar/navbar.component";
-import PhoneComponent from "./common/components/phone/phone.component";
+import CatalogItemComponent from "./common/components/catalog-item/catalog-item.component";
 
 import PhoneModel from "./common/services/phones.model";
+import BucketService from "./common/services/bucket.service";
+import CommentsModel from "./common/services/comments.model";
 
 import "./variables.styl";
 import "./app.styl";
@@ -21,9 +24,12 @@ angular.module("client", [uiRouter])
     })
     .config(routerConfig)
     .component("navbar", NavbarComponent)
-    .component("phone", PhoneComponent)
+    .component("catalogItem", CatalogItemComponent)
     .component("main", MainPageComponent)
     .component("catalog", CatalogPageComponent)
     .component("about", AboutPageComponent)
+    .component("detailsInfo", DetailsPageComponent)
     .service("phoneModel", PhoneModel)
+    .service("commentsModel", CommentsModel)
+    .service("bucketService", BucketService)
     .run();

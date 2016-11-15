@@ -5,13 +5,14 @@ import template from "./catalog.page.html";
 import "./catalog.styl";
 
 class Controller {
-    constructor(phoneModel) {
+    constructor(phoneModel, bucketService) {
         this.data = [];
         this.phoneModel = phoneModel;
         this.phoneModel.getAll().then((data) => {
            this.data = data;
         });
         console.log("Catalog page is active hello world");
+
     }
 }
 

@@ -1,11 +1,11 @@
-menuBg=yellow;
+@import "../../../variables.styl";
 
 .navbar
-	background menuBg
+	background $navbarColor
 	.navbar_items
 		display flex
 		width 100%
-		max-width 960px
+		max-width $defaultContainerWidth
 		margin 0 auto
 		.navbar_item > a
 			display inline-block

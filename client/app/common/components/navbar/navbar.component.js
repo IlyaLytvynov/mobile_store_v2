@@ -4,7 +4,7 @@
 import "./navbar.styl";
 
 class Controller {
-    constructor() {
+    constructor(bucketService, $scope) {
         //model
         this.menuItems = [
             {
@@ -19,7 +19,14 @@ class Controller {
                 title: "bucket",
                 sref: "main.bucket"
             },
-        ]
+        ];
+        this.total = bucketService.getItems().length;
+
+        $scope.$watch(() => {
+            return  bucketService.timestamp;
+        }, (n) => {
+            this.total= bucketService.getItems().length;
+        }, true)
     }
 }
 
@@ -31,6 +38,9 @@ const NavbarComponent =  {
                     <a ui-sref="{{item.sref}}">{{item.title}}</a>
                 </li>
             </ul>
+            <div>
+                {{$ctrl.total}}
+            </div>
         </nav>`,
     controller: Controller
 };

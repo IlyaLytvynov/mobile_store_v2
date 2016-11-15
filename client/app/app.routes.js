@@ -12,7 +12,11 @@ export default function routerConfig($stateProvider, $urlRouterProvider, $locati
     }).state("main.catalog", {
         url: 'catalog',
         component: "catalog"
-    }).state("main.about", {
+    }).state("main.details", {
+        url: 'details/:id',
+        component: "detailsInfo"
+    })
+        .state("main.about", {
         url: 'about',
         component: "about"
     });
