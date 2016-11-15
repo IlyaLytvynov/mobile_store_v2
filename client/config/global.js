@@ -7,16 +7,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = _path => {
     //define local variables
     var dependencies = Object.keys(require(path.normalize(_path + '/package')).dependencies);
+    console.log(path.join(_path + "/app/app.js"));
     return {
         //enter point
         entry: {
-            application: path.normalize(_path + "/app/app.js"),
+            application: path.join(_path + "/app/app.js"),
             vendors: dependencies
         },
 
         output: {
             path: path.join(_path, "build"),
-            filename: path.join("js", "[name].bundle.[chunkhash].js"),
+            filename: "js/[name].bundle.[chunkhash].js",
             chunkFilename: "[id].bundle.[chunkhash].js",
             publicPath: "/"
         },

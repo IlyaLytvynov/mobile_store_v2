@@ -3,7 +3,7 @@ const path = require("path");
 
 module.exports = function(_path) {
     return {
-        context: _path,
+        context: path.normalize(_path),
         debug: true,
         devtool: 'source-map',
         devServer: {
