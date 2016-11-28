@@ -5,14 +5,14 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
     moduleId: module.id.toString(),
-    selector: "mobile-store",
-    templateUrl: "app.component.html"
+    selector: "ms-catalog",
+    templateUrl: "catalog.component.html"
 })
-export class AppComponent implements OnInit {
+export class CatalogComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        console.log("App.component init");
+        console.log("catlog component init!");
     }
-    
+
 }

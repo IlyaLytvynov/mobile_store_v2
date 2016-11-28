@@ -2,11 +2,14 @@ import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule }   from "@angular/forms";
 import { HttpModule, JsonpModule } from "@angular/http";
-import { CatalogModule} from "../catalog/catalog.module";
-import { AppRouting} from "./app.routing";
+import { Routes, RouterModule } from "@angular/router";
+// import { AppRouting} from "./app.routing";
 
-import { AppComponent }  from "./app.component";
-import { CommonModule }  from "../common/common.module";
+import {CatalogModule} from "./catalog/catalog.module";
+
+import {AppComponent} from "./app.component";
+
+
 
 @NgModule({
     imports: [
@@ -14,11 +17,14 @@ import { CommonModule }  from "../common/common.module";
         FormsModule,
         HttpModule,
         JsonpModule,
-        CatalogModule,
-        CommonModule,
-        AppRouting
+        CatalogModule
+        // RouterModule.forRoot([
+        //     {path: "", component: ListComponent},
+        // ])
     ],
-    declarations: [AppComponent],
+    declarations: [
+        AppComponent
+    ],
     providers: [],
     bootstrap: [AppComponent]
 })
