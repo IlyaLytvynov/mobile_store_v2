@@ -1,0 +1,26 @@
+headerDefaultTextColor=#FFF;
+navbarBgDefaultColor=#1acdb7
+navbarBgDefaultColorDark=darken(navbarBgDefaultColor, 20%)
+.navbar
+	background navbarBgDefaultColor
+	height 50px
+	box-shadow 1px 2px 0 0 navbarBgDefaultColorDark
+	&__menu
+		list-style none
+		display flex
+		&_item
+			flex-basis 20%
+			display flex
+			> a
+				text-decoration none
+				height 100%
+				width 100%
+				display flex
+				flex-direction column
+				justify-content  center
+				color headerDefaultTextColor
+				&:hover
+					background navbarBgDefaultColorDark
+				> span
+					width 100%
+					text-align center

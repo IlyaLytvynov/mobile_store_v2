@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const config = {
     entry: {
@@ -10,7 +11,7 @@ const config = {
     },
 
     resolve: {
-        extensions: ['', '.js', '.ts']
+        extensions: ['', '.js', '.ts', '.css']
     },
 
     output: {
@@ -63,6 +64,7 @@ if (process.env.NODE_ENV === 'dev') {
     config.devServer = {
         host: 'localhost', // default
         port: 8080,// default
+        inline: true,
         historyApiFallback: true,
         stats: 'minimal'
     };

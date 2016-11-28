@@ -1,11 +1,13 @@
 import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import {CommonModule} from "@angular/common";
 import { FormsModule }   from "@angular/forms";
 import { HttpModule, JsonpModule } from "@angular/http";
-import { Routes, RouterModule } from "@angular/router";
-// import { AppRouting} from "./app.routing";
 
+// import { AppRouting} from "./app.routing";
+import { SharedModule } from "./shared_components/shared.module";
 import {CatalogModule} from "./catalog/catalog.module";
+import {AppRouting} from "./app.routing";
 
 import {AppComponent} from "./app.component";
 
@@ -15,12 +17,12 @@ import {AppComponent} from "./app.component";
     imports: [
         BrowserModule,
         FormsModule,
+        CommonModule,
         HttpModule,
         JsonpModule,
-        CatalogModule
-        // RouterModule.forRoot([
-        //     {path: "", component: ListComponent},
-        // ])
+        CatalogModule,
+        AppRouting,
+        SharedModule
     ],
     declarations: [
         AppComponent

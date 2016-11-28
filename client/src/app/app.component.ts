@@ -3,9 +3,12 @@
  */
 import { Component, OnInit } from "@angular/core";
 
+import "normalize-css";
+
 @Component({
     moduleId: module.id.toString(),
     selector: "mobile-store",
+    styleUrls: [],
     templateUrl: "app.component.html"
 })
 export class AppComponent implements OnInit {
