@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
     moduleId: module.id.toString(),
     selector: "ms-navbar",
-    styleUrls: ["../../../base.styl", "./navbar.styl"],
+    styleUrls: ["./navbar.styl"],
     templateUrl: "navbar.component.html"
 })
 export class NavbarComponent implements OnInit {

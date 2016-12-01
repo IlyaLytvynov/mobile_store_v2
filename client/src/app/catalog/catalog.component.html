@@ -1,3 +1,4 @@
 <!--<ms-catalog-item></ms-catalog-item>-->
 
-<div *ngFor="let item of items">{{item.name}}</div>
+<!--<div *ngFor="let item of items">{{item.name}}</div>-->
+<ms-catalog-item *ngFor="let phone of items" [phone]="phone"></ms-catalog-item>

@@ -9,7 +9,11 @@ const inputHelper = require('../libs/helpers/helpers');
 const url = '/phones/';
 
 exports.getAll = (req, res, next) => {
-    return Phones.getAll()
+    var options = {
+        fullUrl: req.protocol + '://' + req.get('host')
+    };
+
+    return Phones.getAll(options)
         .then(phones => {
             res.status(200);
             res.json(phones);

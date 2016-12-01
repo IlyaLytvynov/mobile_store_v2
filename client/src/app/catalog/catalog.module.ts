@@ -5,9 +5,6 @@ import { CatalogRoutingModule } from "./catalog.routing";
 import { CatalogComponent } from "./catalog.component";
 import { CatalogItemComponent} from "./components/catalog_item/catalog_item.component";
 
-
-
-
 @NgModule({
     imports: [
         CatalogRoutingModule,
