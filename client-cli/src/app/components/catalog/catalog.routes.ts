@@ -4,13 +4,10 @@ import { CatalogComponent } from './catalog.component'
 
 const routes: Routes = [
     { path: "catalog", component: CatalogComponent  },
-
-    // lazy loaded modules
-    // { path: 'details', loadChildren: './+details/details.module#DetailsModule' }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
 export class CatalogRouting {}

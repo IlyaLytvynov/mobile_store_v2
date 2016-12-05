@@ -5,24 +5,30 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
+import { CoreModule } from './core/core.module';
 
-import { CatalogModule } from './catalog/catalog.module';
-import { SharedModule } from './shared/shared.module';
+import { CatalogModule } from './components/catalog/catalog.module';
+import { AboutModule } from './components/about/about.module';
+
+import { NavbarComponent } from './core/components/navbar/navbar.component';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         CatalogModule,
-        AppRoutingModule,
-        SharedModule
+        AboutModule,
+        CoreModule,
+        AppRoutingModule
+    ],
+    declarations: [
+        AppComponent,
+        NavbarComponent
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    exports: []
 })
 export class AppModule {
 }

@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/catalog', pathMatch: 'full' },
-
+    { path: '', redirectTo: '/about', pathMatch: 'full' },
     // lazy loaded modules
-    // { path: 'details', loadChildren: './+details/details.module#DetailsModule' }
+    { path: 'details', loadChildren: './components/+details/details.module#DetailsModule' }
 ];
 
 @NgModule({
