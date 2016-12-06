@@ -1,4 +1,8 @@
 <div class="catalog">
-    <catalog-item class="catalog__item" *ngFor="let item of items" [item]="item"></catalog-item>
+    <catalog-item class="catalog__item"
+                  *ngFor="let item of items"
+                  [item]="item"
+                  (onSelect)="itemSelect($event)"
+    ></catalog-item>
 </div>
 

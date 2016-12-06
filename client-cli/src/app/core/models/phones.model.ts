@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 
 @Injectable()
-export class PhonesModel {
+export  class PhonesModel {
     private phones: Array<IPhone>;
     private apiUrl: string = constants.apiUrl + '/phones';
 
@@ -20,6 +20,10 @@ export class PhonesModel {
 
     get():Observable<IPhone[]> {
         return this.http.get(this.apiUrl).map(this.extractData);
+    }
+
+    getOne(id:string):Observable<IPhone[]>{
+        return this.http.get(`${this.apiUrl}/${id}`).map(this.extractData);
     }
 
     private extractData(res: Response) {

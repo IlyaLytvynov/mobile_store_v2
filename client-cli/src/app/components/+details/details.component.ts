@@ -1,20 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { PhonesModel } from '../../core/models/phones.model';
 
-debugger;
+import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: 'details.component.html',
-  styleUrls: ['details.component.styl']
+    selector: 'app-details',
+    templateUrl: 'details.component.html',
+    styleUrls: ['details.component.styl']
 })
 export class DetailsComponent implements OnInit {
+    public item: any = {};
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private model: PhonesModel,
+    ) {}
 
-  constructor() {
-    debugger;
-  }
-
-  ngOnInit() {
-    console.log("TEst!!")
-  }
+    ngOnInit() {
+        this.route.params
+        // (+) converts string 'id' to a number
+            .switchMap((params: Params) => {
+                return this.model.getOne(params['id'])
+            })
+            .subscribe((phone: any) => {
+                this.item = phone
+            });
+    }
 
 }

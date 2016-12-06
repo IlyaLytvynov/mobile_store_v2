@@ -2,7 +2,8 @@
 @import "./catalog.variables.styl";
 
 .catalog
-	background green
+	padding-top 8px
+	position relative
 	min-height "calc(100% - %s)" % navbarDefaultHeight
 	width 100%
 	max-width defaultPageMaxWidth
@@ -15,7 +16,7 @@
 		flex-basis itemDefaultWidth
 		flex-grow 0
 		flex-shrink 0
-		padding 0.3em
+		padding 0.8em
 		box-sizing border-box
 		@media screen and (min-width: 768px) and (max-width:992px)
 			width 33.3333%

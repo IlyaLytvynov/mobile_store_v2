@@ -1,7 +1,7 @@
 [
     {
         "age": 0, 
-        "id": "motorola-xoom-with-wi-fi", 
+        "id": "motorola-xoom",
         "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
         "name": "Motorola XOOM\u2122 with Wi-Fi", 
         "price": 100,
@@ -82,7 +82,7 @@
         "id": "samsung-showcase-a-galaxy-s-phone",
         "price": 500, 
         "imageUrl": "img/phones/samsung-showcase-a-galaxy-s-phone.0.jpg", 
-        "name": "Samsung Showcase\u2122 a Galaxy S\u2122 phone", 
+        "name": "Samsung Showcase",
         "snippet": "The Samsung Showcase\u2122 delivers a cinema quality experience like you\u2019ve never seen before. Its innovative 4\u201d touch display technology provides rich picture brilliance, even outdoors"
     }, 
     {
@@ -90,7 +90,7 @@
         "carrier": "Verizon", 
         "id": "droid-2-global-by-motorola", 
         "imageUrl": "img/phones/droid-2-global-by-motorola.0.jpg", 
-        "name": "DROID\u2122 2 Global by Motorola", 
+        "name": "DROID2 Global by Motorola",
         "price": 348,
         "snippet": "The first smartphone with a 1.2 GHz processor and global capabilities."
     }, 
@@ -99,7 +99,7 @@
         "carrier": "Verizon", 
         "id": "droid-pro-by-motorola", 
         "imageUrl": "img/phones/droid-pro-by-motorola.0.jpg", 
-        "name": "DROID\u2122 Pro by Motorola", 
+        "name": "DROID Pro by Motorola",
         "price": 398,
         "snippet": "The next generation of DOES."
     }, 
@@ -108,7 +108,7 @@
         "carrier": "AT&T", 
         "id": "motorola-bravo-with-motoblur", 
         "imageUrl": "img/phones/motorola-bravo-with-motoblur.0.jpg", 
-        "name": "MOTOROLA BRAVO\u2122 with MOTOBLUR\u2122", 
+        "name": "MOTOROLA BRAVO",
         "price": 395,
         "snippet": "An experience to cheer about."
     }, 
@@ -117,7 +117,7 @@
         "carrier": "T-Mobile", 
         "id": "motorola-defy-with-motoblur", 
         "imageUrl": "img/phones/motorola-defy-with-motoblur.0.jpg", 
-        "name": "Motorola DEFY\u2122 with MOTOBLUR\u2122", 
+        "name": "Motorola DEFY",
         "price": 325,
         "snippet": "Are you ready for everything life throws your way?"
     }, 
@@ -126,7 +126,7 @@
         "carrier": "T-Mobile", 
         "id": "t-mobile-mytouch-4g", 
         "imageUrl": "img/phones/t-mobile-mytouch-4g.0.jpg", 
-        "name": "T-Mobile myTouch 4G", 
+        "name": "T-Mobile myTouch",
         "price": 145,
         "snippet": "The T-Mobile myTouch 4G is a premium smartphone designed to deliver blazing fast 4G speeds so that you can video chat from practically anywhere, with or without Wi-Fi."
     }, 
@@ -135,7 +135,7 @@
         "carrier": "US Cellular", 
         "id": "samsung-mesmerize-a-galaxy-s-phone", 
         "imageUrl": "img/phones/samsung-mesmerize-a-galaxy-s-phone.0.jpg", 
-        "name": "Samsung Mesmerize\u2122 a Galaxy S\u2122 phone",
+        "name": "Samsung Mesmerize",
         "price": 102, 
         "snippet": "The Samsung Mesmerize\u2122 delivers a cinema quality experience like you\u2019ve never seen before. Its innovative 4\u201d touch display technology provides rich picture brilliance,even outdoors"
     }, 
@@ -152,7 +152,7 @@
         "age": 17, 
         "id": "samsung-transform", 
         "imageUrl": "img/phones/samsung-transform.0.jpg", 
-        "name": "Samsung Transform\u2122", 
+        "name": "Samsung Transform",
         "price": 420,
         "snippet": "The Samsung Transform\u2122 brings you a fun way to customize your Android powered touch screen phone to just the way you like it through your favorite themed \u201cSprint ID Service Pack\u201d."
     }, 
@@ -168,7 +168,7 @@
         "age": 19, 
         "id": "motorola-charm-with-motoblur", 
         "imageUrl": "img/phones/motorola-charm-with-motoblur.0.jpg", 
-        "name": "Motorola CHARM\u2122 with MOTOBLUR\u2122", 
+        "name": "Motorola CHARM",
         "price": 227,
         "snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service."
     }
