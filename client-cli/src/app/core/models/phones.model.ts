@@ -7,6 +7,10 @@ import { constants } from '../constants/app.constants';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+const extractData = (res: Response) => {
+    let body = res.json();
+    return body|| { };
+};
 
 @Injectable()
 export  class PhonesModel {
@@ -19,20 +23,10 @@ export  class PhonesModel {
 
 
     get():Observable<IPhone[]> {
-        return this.http.get(this.apiUrl).map(this.extractData);
+        return this.http.get(this.apiUrl).map(extractData);
     }
 
     getOne(id:string):Observable<IPhone[]>{
-        return this.http.get(`${this.apiUrl}/${id}`).map(this.extractData);
+        return this.http.get(`${this.apiUrl}/${id}`).map(extractData);
     }
-
-    private extractData(res: Response) {
-        let body = res.json();
-        return body|| { };
-    }
-
-    test():any {
-        return this.phones;
-    }
-
 }

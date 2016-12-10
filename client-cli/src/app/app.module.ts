@@ -10,8 +10,6 @@ import { CoreModule } from './core/core.module';
 import { CatalogModule } from './components/catalog/catalog.module';
 import { AboutModule } from './components/about/about.module';
 
-import { NavbarComponent } from './core/components/navbar/navbar.component';
-
 @NgModule({
     imports: [
         BrowserModule,
@@ -23,8 +21,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
         AppRoutingModule
     ],
     declarations: [
-        AppComponent,
-        NavbarComponent
+        AppComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

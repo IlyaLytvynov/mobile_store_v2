@@ -1,7 +1,8 @@
 <nav class="navbar">
-  <ul class="navbar__menu">
-    <li class="navbar__menu_item"><a routerLink="catalog"><span>Home</span></a></li>
-    <li class="navbar__menu_item"><a routerLink="details"><span>Details</span></a></li>
-    <li class="navbar__menu_item"><a routerLink="about"><span>About</span></a></li>
-  </ul>
+    <ul class="navbar__menu">
+        <li class="navbar__menu_item" *ngFor="let item of menuElements">
+            <a (click)="routeSelect(item.route)"><span>{{item.title}}</span></a>
+        </li>
+    </ul>
+    {{itemsInCart}}
 </nav>
