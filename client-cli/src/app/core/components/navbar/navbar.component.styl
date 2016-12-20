@@ -1,19 +1,19 @@
 @import "../../../app.variables.styl";
 //navbarBgDefaultColor
 .navbar
-	background navbarBgDefaultColor
 	height navbarDefaultHeight
-	box-shadow 1px 2px 0 0 navbarBgDefaultColorDark
 	position relative
 	z-index 2
 	width 100%
+	max-width maxPageWidth
+	display flex
+	margin 0 auto
 	&__menu
 		list-style none
 		display flex
 		-webkit-display flex
 		height 100%
-		width 100%
-		max-width maxPageWidth
+		width 80%
 		margin 0 auto
 		&_item
 			flex-basis 10%
@@ -21,7 +21,7 @@
 			display flex
 			cursor pointer
 			&:hover
-				background navbarBgDefaultColorDark
+				background headBgDefaultColorDark
 				transition background 0.5s, color 0.5s
 			> a
 				text-decoration none
@@ -35,3 +35,13 @@
 					width 100%
 					display block
 					height 100%
+	&__cart
+		width 20%
+		text-align right
+		display flex
+		flex-direction column
+		justify-content center
+		cursor pointer
+		color headerDefaultTextColor
+		> span
+			padding-right 10px

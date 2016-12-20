@@ -17,6 +17,8 @@ export class CartService {
     set item(item: IPhone) {
         this.dataStore.push(item);
         this._store.next(this.dataStore);
-        this._test.next(this.dataStore.length);
+        this._test.next(this.dataStore.reduce((total: number, item: IPhone) => {
+            return total + item.price;
+        }, 0));
     }
 }

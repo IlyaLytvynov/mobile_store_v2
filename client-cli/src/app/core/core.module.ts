@@ -4,7 +4,7 @@ import { CoreComponent } from './core.component';
 import { HttpModule } from '@angular/http';
 import { PhonesModel } from './models/phones.model';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import {CartService} from './services/cart.service';
+import { CartService } from './services/cart.service';
 
 @NgModule({
     imports: [
@@ -13,7 +13,7 @@ import {CartService} from './services/cart.service';
     ],
     declarations: [
         CoreComponent,
-        NavbarComponent
+        NavbarComponent,
     ],
     providers: [PhonesModel, CartService],
     exports: [NavbarComponent]

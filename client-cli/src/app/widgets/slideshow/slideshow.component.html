@@ -1,0 +1,18 @@
+<div class="slide-show">
+    <div class="slide-show__main-image" >
+        <img src="{{mainImage}}"
+             (@changeSlide.start)="animStartCallback($event)"
+             [@changeSlide]="slideShowState"
+             (@changeSlide.done)="animDoneCallback($event)"
+             alt="main-image">
+    </div>
+    <div class="slide-show__thumbnails-viewport" controls>
+        <div class="slide-show__controll slide-show__controll_show-previous">prev</div>
+        <div class="slide-show__thumbnails">
+            <div class="slide-show__thumbnail" *ngFor="let imageUrl of _images" (click)="showImage(imageUrl)">
+                <img src="{{imageUrl}}" alt="">
+            </div>
+        </div>
+        <div class="slide-show__controll slide-show__controll_show-next">next</div>
+    </div>
+</div>

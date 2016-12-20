@@ -1,0 +1,32 @@
+.slide-show
+	border 1px solid red
+	background #FFF;
+	position relative
+	&__main-image
+		position relative
+		width 80%
+		margin 0 auto
+		> img
+			width 100%
+	&__thumbnails-viewport
+		width 100%
+		overflow hidden
+		position relative
+	&__controll
+		width 10%
+		background red
+		color #FFF
+		height 100%
+		position absolute
+		&_show-next
+			top 0
+			right 0
+		&_show-previous
+			top 0
+			left 0
+	&__thumbnails
+		display flex
+	&__thumbnail
+		flex 0 0 25%
+		>img
+			width 100%

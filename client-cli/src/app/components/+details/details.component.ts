@@ -21,10 +21,11 @@ export class DetailsComponent implements OnInit {
         this.route.params
         // (+) converts string 'id' to a number
             .switchMap((params: Params) => {
-                return this.model.getOne(params['id'])
+                return this.model.getOne(params['id']);
             })
             .subscribe((phone: any) => {
-                this.item = phone
+            debugger;
+                this.item = phone;
             });
     }
 

@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 
 import { CatalogModule } from './components/catalog/catalog.module';
 import { AboutModule } from './components/about/about.module';
+import { PurchasesModule } from './components/purchases/purchases.module';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { AboutModule } from './components/about/about.module';
         CatalogModule,
         AboutModule,
         CoreModule,
-        AppRoutingModule
+        AppRoutingModule,
+        PurchasesModule
     ],
     declarations: [
         AppComponent
