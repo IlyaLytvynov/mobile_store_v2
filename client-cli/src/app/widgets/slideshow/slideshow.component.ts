@@ -2,41 +2,19 @@ import {
     Component,
     OnInit,
     Input,
-    SimpleChange,
-    trigger,
-    state,
-    style,
-    transition,
-    animate
+    SimpleChange
 } from '@angular/core';
 
 @Component({
     selector: 'slideshow',
     templateUrl: 'slideshow.component.html',
     styleUrls: ['slideshow.component.styl'],
-    animations: [
-        trigger('changeSlide', [
-            // state('in', style({
-            //     transform: 'translate3d(0, 0, 0)'
-            // })),
-            // state('out', style({
-            //     transform: 'translate3d(100%, 0, 0)'
-            // })),
-            // transition('in => out', animate('400ms ease-in-out')),
-            // transition('out => in', animate('400ms ease-in-out'))
-            state('shown', style({opacity: 1})),
-            state('hidden', style({opacity: 0})),
-            transition('hidden => shown', [
-                animate('400ms ease-in-out')
-            ])
-        ])
-    ]
 })
 export class SlideshowComponent implements OnInit {
-    public _images: string[];
+    public _images: any[];
     public mainImage: string;
-    public slideShowState: string = 'shown';
-    private timeOut: any;
+    public isShown: string = 'true';
+    private indexOfActiveSlide: number = 0;
 
     @Input()
     set images(images: string[]) {
@@ -48,7 +26,15 @@ export class SlideshowComponent implements OnInit {
 
     ngOnChanges(changes: {images: SimpleChange}) {
         if (changes.images.currentValue) {
-            this.mainImage = changes.images.currentValue[0];
+            this._images = changes.images.currentValue.map((item, i) => {
+                return {
+                    src: item,
+                    isShown: false,
+                    index: i
+                };
+            });
+
+            this._images[this.indexOfActiveSlide].isShown = true;
         }
     }
 
@@ -56,22 +42,32 @@ export class SlideshowComponent implements OnInit {
         console.log('Slide show init');
     }
 
-    showImage(imageUrl: string) {
-        this.mainImage = imageUrl;
-        this.slideShowState = 'hidden';
-
-        // this.timeOut = setTimeout(() => {
-        //     debugger;
-        //     this.slideShowState = 'out';
-        //     this.timeOut = null;
-        // }, 1000);
+    showImage(index: number) {
+       this.changeSlide(index);
     }
 
-    animStartCallback(e) {
-        debugger;
+    previousSlide() {
+        if (this.indexOfActiveSlide !== 0) {
+            this.indexOfActiveSlide--;
+        } else {
+            this.indexOfActiveSlide = this._images.length - 1;
+        }
+
+        this.changeSlide(this.indexOfActiveSlide);
     }
-    animDoneCallback(e) {
-        console.log(e);
-        this.slideShowState = 'shown';
+
+    nextSlide() {
+        if (this.indexOfActiveSlide + 1 !== this._images.length) {
+            this.indexOfActiveSlide++;
+        } else {
+            this.indexOfActiveSlide = 0;
+        }
+        this.changeSlide(this.indexOfActiveSlide);
+    }
+
+    changeSlide(index) {
+        this.indexOfActiveSlide = index;
+        this._images.forEach(item => item.isShown = false);
+        this._images[index].isShown = true;
     }
 }
