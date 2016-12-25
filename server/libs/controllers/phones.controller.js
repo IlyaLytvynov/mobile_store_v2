@@ -33,7 +33,7 @@ const getAverageRating = (id) => {
  * Get all catalog of phones
  * @returns {Promise.resolve|phones}
  */
-const getAll = () => {
+const getAll = (options) => {
     return PhoneModel.find()
         .then(phones => {
             var promises = [];
@@ -43,6 +43,7 @@ const getAll = () => {
                     new Promise((res, rej) => {
                         return getAverageRating(item._id).then(rating => {
                             item.average_rating = rating;
+
                             res(item);
                         })
                     })
@@ -50,19 +51,16 @@ const getAll = () => {
             });
 
             return Promise.all(promises).then(phones => {
-                debugger;
                 return phones.map(item => {
                     return {
                         _id: item._id,
                         name: item.name,
                         price: item.price,
-                        imgUrl: item.images[0],
+                        imgUrl: options.fullUrl + `/api/v1/` + item.images[0],
                         description: `${item.description[0].slice(0, 100)}...`,
                         average_rating: item.average_rating
                     };
                 });
-            }).catch(e => {
-                debugger;
             });
         })
         .catch(e => {
@@ -71,16 +69,22 @@ const getAll = () => {
 };
 /**
  * Get one phone by id
- * @param id
+ * @param {Object} options
+ * @param {String} options.id
+ * @param {String} options.fullUrl
  * @returns {Promise|*|Promise.<T>}
  */
-const getOne = (id) => {
-    return PhoneModel.findById(id)
+const getOne = (options) => {
+    return PhoneModel.findById(options.id)
         .lean()
         .then(phone => {
-            return getAverageRating(id)
+            return getAverageRating(options.id)
                 .then(rating => {
                     phone.average_rating = rating;
+                    phone.images = phone.images.map((item) => {
+                        return options.fullUrl + `/api/v1/` + item;
+                    });
+
                     return phone;
                 })
         })

@@ -6,7 +6,11 @@ const inputHelper = require('../libs/helpers/helpers');
 const url = '/phones/';
 
 exports.getAll = (req, res, next) => {
-    return Phones.getAll()
+    const options = {
+        fullUrl: req.protocol + '://' + req.get('host')
+    };
+
+    return Phones.getAll(options)
         .then(phones => {
             res.status(200);
             res.json(phones);
@@ -17,7 +21,12 @@ exports.getAll = (req, res, next) => {
 };
 
 exports.getOne = (req, res, next) => {
-    return Phones.getOne(req.params.id).then(phone => {
+    const options = {
+        fullUrl: req.protocol + '://' + req.get('host'),
+        id: req.params.id
+    };
+
+    return Phones.getOne(options).then(phone => {
         res.status(200);
         res.json(phone);
     }).catch(e => {

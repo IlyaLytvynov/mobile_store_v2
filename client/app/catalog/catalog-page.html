@@ -1,4 +1,4 @@
 <h1>Catalog</h1>
 <div ng-repeat = "item in $ctrl.data">
-    <a ui-sref="main.details({id: item._id})">{{item.name}}</a>
+    <catalog-item data="item"></catalog-item>
 </div>

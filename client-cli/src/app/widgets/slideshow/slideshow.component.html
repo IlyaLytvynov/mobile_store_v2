@@ -1,0 +1,31 @@
+<div class="slide-show">
+    <div class="slide-show__controll slide-show__controll_show-previous"
+        (click)="previousSlide()">
+        <span><</span>
+    </div>
+    <div class="slide-show__main-image"
+        (mousedown) ="mouseDown($event)">
+        <div class="image-wrapper"  *ngFor="let image of _images"
+             [ngClass]="{'slide-show__active-image': image.isShown}">
+            <img [src]="image.src"
+                 alt="main-image">
+        </div>
+    </div>
+    <div class="slide-show__controll slide-show__controll_show-next"
+         (click)="nextSlide()">
+        <span>></span>
+    </div>
+    <div class="slide-show__thumbnails-viewport">
+        <!--<div class="slide-show__controll slide-show__controll_show-previous">prev</div>-->
+        <div class="slide-show__thumbnails">
+            <div class="slide-show__thumbnail"
+                 *ngFor="let imageObj of _images; let i = index"
+                 [ngClass]="{'slide-show__thumbnail_selected': indexOfActiveSlide === i}"
+                 (click)="showImage(i)">
+                <img [src]="imageObj.src" alt="">
+            </div>
+        </div>
+        {{indexOfActiveSlide}}
+        <!--<div class="slide-show__controll slide-show__controll_show-next">next</div>-->
+    </div>
+</div>
