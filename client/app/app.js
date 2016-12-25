@@ -1,6 +1,5 @@
 import angular from "angular";
 import uiRouter from 'angular-ui-router';
-import ngMaterial from 'angular-material';
 import routerConfig from './app.routes';
 
 import {MainPageComponent} from './main/main.component';
