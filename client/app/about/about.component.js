@@ -1,18 +1,18 @@
-import template from "./main-page.html";
-import "./main.styl";
+import template from "./about-page.html";
+import "./about.styl";
 
-class MainPageController {
+class AboutPageController {
     constructor($scope) {
         this.pageHeader = "Hello wolrd";
         this.menu = [
             {
                 title: 'Catalog',
-                link: 'main.catalog',
+                link: '#',
                 isVisible: true
             },
             {
                 title: 'About',
-                link: 'main.about',
+                link: '#',
                 isVisible: true
             },
             {
@@ -25,9 +25,9 @@ class MainPageController {
 
 }
 
-const MainPageComponent =  {
+const AboutPageComponent =  {
         template: template,
-        controller: MainPageController
+        controller: AboutPageController
 };
 
-export { MainPageComponent };
+export { AboutPageComponent };

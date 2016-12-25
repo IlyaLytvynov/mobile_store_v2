@@ -9,9 +9,7 @@
     <% } %>
 </head>
 <body ng-app="client">
-<input type="text">
-    <main-page></main-page>
-   <!--<ui-view></ui-view>-->
+   <ui-view></ui-view>
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
 <script src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
 <% } %>

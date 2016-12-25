@@ -4,20 +4,26 @@
 export default function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $urlRouterProvider.when('/', '/catalog');
-    $urlRouterProvider.otherwise('/catalog');
+    $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state("main", {
-        url: '/',
-        component: "main"//главный компонет
-    }).state("main.catalog", {
-        url: 'catalog',
-        component: "catalog"
-    }).state("main.details", {
-        url: 'details/:id',
-        component: "detailsInfo"
-    })
-        .state("main.about", {
-        url: 'about',
-        component: "about"
-    });
+    $stateProvider
+        .state("main", {
+            url: '/',
+            component: "mainPage"//главный компонет
+        }).state("main.about", {
+            url: 'about',
+            component: "aboutPage"
+        })
+        .state("main.catalog", {
+            url: 'catalog',
+            component: "catalogPage"
+        })
+        .state("main.cart", {
+            url: 'cart',
+            component: "cartPage"
+        })
+        .state("main.details", {
+            url: 'details/:id',
+            component: "detailsPage"
+        })
 }

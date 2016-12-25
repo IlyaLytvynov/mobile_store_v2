@@ -1,0 +1,9 @@
+<button ng-click="$ctrl.showElement()">toggle element</button>
+<input type="text" ng-model="$ctrl.test">
+{{$ctrl.test}}
+<menu class="navbar">
+    <li ng-class="{'hidden': !element.isVisible }" class="navbar__item"
+        ng-repeat="element in ::$ctrl.elements">
+        <a ui-sref="{{::element.link}}">{{::element.title}}</a>
+    </li>
+</menu>
