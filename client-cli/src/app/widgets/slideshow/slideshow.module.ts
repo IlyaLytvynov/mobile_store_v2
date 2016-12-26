@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SlideshowComponent } from './slideshow.component';
 import { ControlsDirective } from './slideshow-controlls.directive';
+import { SlideshowDirective } from './slideshow.directive';
 
 @NgModule({
     imports: [
@@ -9,7 +10,8 @@ import { ControlsDirective } from './slideshow-controlls.directive';
     ],
     declarations: [
         SlideshowComponent,
-        ControlsDirective
+        ControlsDirective,
+        SlideshowDirective
     ],
     exports: [SlideshowComponent]
 })
