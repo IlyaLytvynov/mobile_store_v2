@@ -13,7 +13,7 @@ const extractData = (res: Response) => {
 };
 
 @Injectable()
-export  class PhonesModel {
+export  class PhonesService {
     private phones: Array<IPhone>;
     private apiUrl: string = constants.apiUrl + '/phones';
 

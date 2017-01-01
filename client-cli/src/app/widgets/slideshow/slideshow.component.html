@@ -1,18 +1,20 @@
 <div class="slide-show">
-    <div class="slide-show__controll slide-show__controll_show-previous"
-        (click)="previousSlide()">
-        <span><</span>
-    </div>
-    <div class="slide-show__main-image">
-        <div class="image-wrapper"  *ngFor="let image of _images"
-             [ngClass]="{'slide-show__active-image': image.isShown}">
-            <img [src]="image.src"
-                 alt="main-image">
+    <div class="slide-show__head">
+        <div class="slide-show__controll slide-show__controll_show-previous"
+             (click)="previousSlide()">
+            <span><</span>
         </div>
-    </div>
-    <div class="slide-show__controll slide-show__controll_show-next"
-         (click)="nextSlide()">
-        <span>></span>
+        <div class="slide-show__main-image">
+            <div class="image-wrapper" *ngFor="let image of _images"
+                 [ngClass]="{'slide-show__active-image': image.isShown}">
+                <img [src]="image.src"
+                     alt="main-image">
+            </div>
+        </div>
+        <div class="slide-show__controll slide-show__controll_show-next"
+             (click)="nextSlide()">
+            <span>></span>
+        </div>
     </div>
     <div class="slide-show__thumbnails-viewport">
         <div slideshowControlls class="slide-show__controll slide-show__controll_show-previous">prev</div>

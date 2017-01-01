@@ -1,7 +1,3 @@
-/**
- * Created by IlyaLitvinov on 10.02.16.
- */
-
 'use strict';
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -19,10 +15,6 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/client/dist'));
 
-//app.get('/', (req, res) => {
-//    res.sendFile('index.html');
-//});
-
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -32,9 +24,10 @@ app.use((req, res, next) => {
 routes(app);
 
 global.__path = __dirname;
-var server = app.listen(port, function () {
-    var host = server.address().address;
-    var port = server.address().port;
+
+const server = app.listen(port, function () {
+    const host = server.address().address;
+    const port = server.address().port;
 
     console.log('Example app listening at http://localhost:'+port);
 });

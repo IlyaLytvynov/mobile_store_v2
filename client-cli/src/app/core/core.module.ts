@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreComponent } from './core.component';
 import { HttpModule } from '@angular/http';
-import { PhonesModel } from './models/phones.model';
+import { PhonesService } from './services/phones.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CartService } from './services/cart.service';
 
@@ -15,7 +15,7 @@ import { CartService } from './services/cart.service';
         CoreComponent,
         NavbarComponent,
     ],
-    providers: [PhonesModel, CartService],
+    providers: [PhonesService, CartService],
     exports: [NavbarComponent]
 })
 export class CoreModule {

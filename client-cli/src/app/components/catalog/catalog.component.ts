@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PhonesModel } from '../../core/models/phones.model';
+import { PhonesService } from '../../core/services/phones.service';
 
 import { IPhone } from '../../core/interfaces/phone';
 import { CartService } from '../../core/services/cart.service';
@@ -15,7 +15,7 @@ export class CatalogComponent implements OnInit {
     private t: any;
     private u: any;
 
-    constructor(private model: PhonesModel,
+    constructor(private model: PhonesService,
                 private router: Router,
                 private cartService: CartService) {
     }

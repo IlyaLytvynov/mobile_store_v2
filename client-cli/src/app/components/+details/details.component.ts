@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { PhonesModel } from '../../core/models/phones.model';
+import { PhonesService } from '../../core/services/phones.service';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -14,7 +14,7 @@ export class DetailsComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private model: PhonesModel,
+        private model: PhonesService,
     ) {}
 
     ngOnInit() {

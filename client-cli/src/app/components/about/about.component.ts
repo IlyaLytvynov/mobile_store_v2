@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PhonesModel } from '../../core/models/phones.model';
+import { PhonesService } from '../../core/services/phones.service';
 
 @Component({
     selector: 'app-about',
@@ -8,7 +8,7 @@ import { PhonesModel } from '../../core/models/phones.model';
 })
 export class AboutComponent implements OnInit {
 
-    constructor(private model: PhonesModel) {
+    constructor(private model: PhonesService) {
     }
 
     ngOnInit() {
