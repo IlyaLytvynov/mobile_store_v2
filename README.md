@@ -1,6 +1,7 @@
 - Для дальнейшей работы вам необходимо установить git c git-scm.org
 - Node js c nodejs.org
 - Скачать и установить mongodb c https://www.mongodb.com/download-center?jmp=nav#community
+
 # Установка базы данных mongodb
 - Установка монго с официального сайта в С:\MongoDb
 - Создать папку C:\MongoDb\data\db
