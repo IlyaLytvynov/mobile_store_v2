@@ -15,7 +15,6 @@ export class ItemComponent implements OnInit {
     }
 
     selectItem(id: string) {
-        debugger;
         this.onSelect.emit(id);
     }
 

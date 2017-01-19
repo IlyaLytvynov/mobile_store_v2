@@ -11,7 +11,6 @@ import {
 export class SlideshowDirective {
 
     @HostListener('click', ['$event']) onClick(e) {
-        debugger;
         this.highlight('yellow');
     }
 

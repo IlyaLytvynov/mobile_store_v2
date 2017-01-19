@@ -1,12 +1,48 @@
 @import "../../app.variables.styl";
+@import "../../app.btns.styl";
 
+$detailsPadding=0;
 .details
-	border 1px solid red
+	box-shadow 2px 2px 1px 1px rgba(0, 0, 0, 0.06)
+	display table
+	width 100%
 	&__section
-		background green
 		display flex
 	&__slide-show
 		flex-basis 40%
 		flex-grow 0
 		flex-shrink 0
 		width 50%
+	&__specification
+		width 60%
+	&__tabs
+		padding $detailsPadding
+		display table
+		width 100%
+		position relative
+		height 75%
+		border 1px solid green
+	&__header
+		position relative
+		padding $detailsPadding
+		> h2
+			float left
+
+		> .price
+			float right
+		&:after
+			display table
+			content ""
+			width 100%
+			clear both
+	&__footer
+		padding $detailsPadding
+		height 10%;
+		border 1px solid blue
+		&:after
+			content ''
+			width 100%
+			clear both
+			display table
+		> .btn
+			float right

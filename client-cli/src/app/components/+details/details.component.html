@@ -3,9 +3,18 @@
         <div class="details__slide-show">
             <slideshow [images]="item.images"></slideshow>
         </div>
-    </div>
-    <div class="about content_wrapper">
-        {{item.name}}
+        <div class="details__specification">
+            <div class="details__header">
+                <h2>{{item.name}}</h2>
+                <h2 class="price">{{item.price}}</h2>
+            </div>
+            <div class="details__tabs">
+                <tabs [data]="tabsModel"></tabs>
+            </div>
+            <div class="details__footer">
+                <button class="btn btn_add">Add</button>
+            </div>
+        </div>
     </div>
 
 </div>
