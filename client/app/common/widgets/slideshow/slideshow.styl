@@ -1,0 +1,21 @@
+.slideshow
+	&__main-img
+		position relative
+		border 2px solid red
+		height 400px
+		> img
+			position absolute
+			top 0
+			left 0
+			opacity 0
+			transition opacity 0.5s
+	&__thumbnails
+		border 1px solid black
+		display flex
+	&__thumbnail
+		position relative
+		flex-basis 25%
+		> img
+			width 100%
+	&__main-img_active
+		opacity 1 !important

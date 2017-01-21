@@ -1,4 +1,7 @@
 <h1>Catalog</h1>
-<div ng-repeat = "item in $ctrl.data">
-    <catalog-item data="item"></catalog-item>
+<div class="catalog__grid">
+    <div ng-repeat = "item in $ctrl.data" class="catalog__grid-element" ng-class="{test: $ctrl.isValid}">
+        {{item}}
+        <catalog-item data="item"></catalog-item>
+    </div>
 </div>

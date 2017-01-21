@@ -1,2 +1,9 @@
-<img ng-src="{{$ctrl.data.imgUrl}}" alt="">
-<a ui-sref="main.details({id: $ctrl.data._id})">{{$ctrl.data.name}}</a>
+<div class="catalog-item">
+    <!--<div class="catalog-item__image"><img ng-src="{{$ctrl.data.imgUrl}}" alt=""></div>-->
+    <div class="catalog-item__image">
+        <img ng-src="{{$ctrl.data.imgUrl}}" alt="">
+    </div>
+    <div class="catalog-item__item-title">
+        <a ui-sref="main.details({id: $ctrl.data._id})">{{$ctrl.data.name}}</a>
+    </div>
+</div>

@@ -1,11 +1,21 @@
 import template from "./catalog-item.html";
 import "./catalog-item.styl";
 
+const test = '121';
+
 class Controller {
     constructor() {
-        this.data = {}
+        this.data = {};
+
+    }
+    $ngOnInit() {
+        console.log('Inited!!');
     }
 
+    $onChanges () {
+        console.log(this.data);
+        console.log('++++++++++');
+    }
 }
 
 const CatalogItemComponent =  {

@@ -1,12 +1,17 @@
 @import"../variables.styl";
 
-.main
-	min-height 100%
-	background $contentColor
-	position relative
-	display flex
-	width $defaultContainerWidth
-	flex-direction column
-	.header
-		width $defaultContainerWidth
-		border 2px solid #ff00d4
+.catalog
+	&__grid
+		border 1px solid yellow
+		box-sizing border-box
+		height 100%
+		width 100%
+		min-height 100%
+		display flex
+		justify-content center
+		flex-wrap wrap
+		&-element
+			flex-basis 33.3333%
+			@media screen and (max-width: 767px)
+				flex-basis 100%
+
