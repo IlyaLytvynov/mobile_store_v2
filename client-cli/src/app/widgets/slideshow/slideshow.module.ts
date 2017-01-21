@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SlideshowComponent } from './slideshow.component';
 import { ControlsDirective } from './slideshow-controlls.directive';
 import { SlideshowDirective } from './slideshow.directive';
+import { FitSlidesDirective } from './fit-slides.directive';
 
 @NgModule({
     imports: [
@@ -11,7 +12,8 @@ import { SlideshowDirective } from './slideshow.directive';
     declarations: [
         SlideshowComponent,
         ControlsDirective,
-        SlideshowDirective
+        SlideshowDirective,
+        FitSlidesDirective
     ],
     exports: [SlideshowComponent]
 })

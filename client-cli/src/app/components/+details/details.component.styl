@@ -1,9 +1,8 @@
 @import "../../app.variables.styl";
 @import "../../app.btns.styl";
 
-$detailsPadding=0;
+$detailsPadding=10px;
 .details
-	box-shadow 2px 2px 1px 1px rgba(0, 0, 0, 0.06)
 	display table
 	width 100%
 	&__section
@@ -21,7 +20,7 @@ $detailsPadding=0;
 		width 100%
 		position relative
 		height 75%
-		border 1px solid green
+		overflow hidden
 	&__header
 		position relative
 		padding $detailsPadding
@@ -38,7 +37,6 @@ $detailsPadding=0;
 	&__footer
 		padding $detailsPadding
 		height 10%;
-		border 1px solid blue
 		&:after
 			content ''
 			width 100%

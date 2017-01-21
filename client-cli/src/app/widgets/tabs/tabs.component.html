@@ -1,13 +1,16 @@
 <div class="tabs">
-    <div class="tabs__controlls" tabsIndicator>
-        <div class="tabs__control"
-             *ngFor="let tab of _data"
-             (click)="changeTab(tab.id)"
-             [ngClass]="{'tabs__content-tab_active': activeTab === tab.id}">{{tab.title}}</div>
-        <div class="tabs__controlls-indicator"></div>
+    <div class="tabs__colntrolls-wrapper">
+        <div class="tabs__controlls" tabsIndicator>
+            <div class="tabs__control"
+                 *ngFor="let tab of _data"
+                 (click)="changeTab(tab.id)"
+                 [ngClass]="{'tabs__control-tab_active': activeTab === tab.id}">{{tab.title}}</div>
+            <div class="tabs__controlls-indicator"></div>
+        </div>
     </div>
+
     <div class="tabs__content">
-        <div class="tabs__content-tab"
+        <div class="tabs__content-tab active"
              *ngFor="let tab of _data"
              [ngClass]="{'tabs__content-tab_active': activeTab === tab.id}">
             {{tab.content}}

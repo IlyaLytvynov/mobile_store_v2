@@ -1,15 +1,23 @@
+@import'./app.variables.styl';
+
 $btnBgAdd= #00e676;
+$defaultBtnBg=#f4f4f4
+$defaultBlockShadow=0 1px 4px 0 rgba(117,117,117,.5)
+$activeBlockShadow=0 1px 4px 0 rgba(117,117,117,.7) inset
 .btn
-	background none
+	background-color $defaultBtnBg
 	border none
-	padding 7px 10px
 	margin 0
-	border-radius 5px
 	font-size 1rem
 	outline none
-
+	border-radius 2px
+	box-shadow $defaultBlockShadow
+	transition background .3s, color .4s
+	padding 10px 15px
+	cursor pointer
+	position relative
 	&_add
-		background-color $btnBgAdd
+		background-color headBgDefaultColor
+		color #FFF
 		&:active
-			background-color darken($btnBgAdd, 30%)
-
+			box-shadow $activeBlockShadow
