@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node server.js"
+    "start-api": "node server.js",
+    "start-mongo-mac": "mkdir mongo-db; mongod --dbpath mongo-db",
+    "start-mongo-win": "md mongo-db & \"C:/Program Files/MongoDb/Server/3.2/bin/mongod.exe\" --dbpath mongo-db",
+    "export-data": "cross-env node database/phones.export.js; node database/phones.export.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
     "express": "^4.13.4",
     "mongoose": "^4.4.5",
     "nconf": "^0.8.4",
-    "node-uuid": "^1.4.7"
+    "node-uuid": "^1.4.7",
+    "cross-env": "^3.1.3"
   }
 }
