@@ -20,7 +20,6 @@ mongoose.set('debug', true);
 function CreateCollection() {
     return PhoneModel.find({name: 'Dell Streak 7'})
         .then(phone => {
-            debugger;
             const input = {
                 item_id: phone[0].id,
                 text: 'comment for phone',
@@ -42,8 +41,9 @@ function CreateCollection() {
 
             return new CommentModel(input).save()
         })
-        .then(res => {
-            console.log(res.id);
+        .then(() => {
+            console.log('>>>>>>>>>>>>>>>>>>>>>');
+            process.exit();
         })
         .catch(e => {
             console.log(e);
@@ -54,9 +54,9 @@ function CreateCollection() {
 }
 mongoose.connection.on('open', () => {
     mongoose.connection.db.dropCollection('comments', (err, result) => {
-        mongoose.connection.db.collections().then(res => {
+        mongoose.connection.db.collections().then(() => {
             //todo create auto droping db if exist
-            CreateCollection()
+            return CreateCollection();
         })
     });
 });
