@@ -1,22 +1,20 @@
 - Для дальнейшей работы вам необходимо установить git c git-scm.org
 - Node js c nodejs.org
-- Скачать и установить mongodb c https://www.mongodb.com/download-center?jmp=nav#community
 
-# Установка базы данных mongodb
-- Установка монго с официального сайта в С:\MongoDb
-- Создать папку C:\MongoDb\data\db
-- Запуск монго сервера:
-    - Перейти в папку  С:\MongoDb\Server\3.2\bin открываем консоль CMD
-    - Из консоли запускаем mongod --dbpath C:\MongoDb\data\db - команда запуска выполняется
-    каждый раз перед стартом приложения.
-    !!! Консоль не закрываем
+# Установка базы данных mongodb WIN
+- Установка монго с официального сайта https://www.mongodb.com/download-center?jmp=nav#community в путь по умолчанию *C:/Program Files/MongoDb/*
+
+# Установка базы данных mongodb MAC
+- В терминале запустить команду */usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"* - установка homebrew http://brew.sh/index_ru.html
+- В терминале запустить команду *brew install mongodb*
 
 # Установка и запуск API сервера
 - Переходим в папку mobile_store/server
-- Запускаем консоль cmd или gitBash 
+- Запускаем консоль cmd, gitBash, или terminal(для macOS) 
 - В открывшейся консоли выполняем команду npm install(установятся все необходимые библиотеки)
-- Переходим в mobile_store/server/database
-- Выполняем команду в консоли node export.script.js  после выпонлнения двнной команды ctrl + c и запускаем следующую команду node comments.export.js
+- В консоле(win - cmd, mac - terminal) выполнить команды *npm run start-mongo-mac* или *npm run start-mongo-win*  эта команда запускает базу данных, окно не закрываем
+- Открыть *еще одно* окно консоли(терминала) выполнить команду *npm run export-data* - експортирует данные в базу данных
+- Выполняем команду *npm run start-api*
 
 # Установка и запуск клиента
 Переходим в папку mobile_store/client в командной строке/терминале выполняем:
