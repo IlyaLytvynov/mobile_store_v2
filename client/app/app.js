@@ -10,6 +10,8 @@ import {CatalogItemComponent} from './common/widgets/catalog-item/catalog-item.c
 import {DetailsPageComponent} from './details/details.component';
 import {SlideshowComponent} from './common/widgets/slideshow/slideshow.component';
 
+import {ThumbnailsDirective} from './common/widgets/slideshow/thumbnails.directive'
+
 import {PhoneService} from './common/services/phone.service';
 
 
@@ -28,4 +30,5 @@ angular.module("client", [
     .component('catalogItem', CatalogItemComponent)
     .component('slideshow', SlideshowComponent)
     .service('phoneService', PhoneService)
+    .directive('thumbnails', ThumbnailsDirective)
     .config(routerConfig);

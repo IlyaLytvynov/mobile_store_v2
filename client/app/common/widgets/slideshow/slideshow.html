@@ -1,15 +1,19 @@
-Hello world
+
 <div class="slideshow">
     <div class="slideshow__main-img" >
-        <img src="{{img}}" alt=""
-             ng-repeat="img in $ctrl.images"
-             ng-class="{'slideshow__main-img_active': $ctrl.activeImg === img}">
+        <div class="slideshow__main-img-wrapper">
+            <img src="{{img}}" alt=""
+                 ng-repeat="img in $ctrl.images"
+                 ng-class="{'slideshow__main-img_active': $ctrl.activeImg === img}">
+        </div>
     </div>
-    {{$ctrl.activeImg}}
-    <div class="slideshow__thumbnails">
-        <div class="slideshow__thumbnail" ng-repeat="img in $ctrl.images"
-             ng-click="$ctrl.changeImg(img)">
-            <img src="{{img}}" alt="">
+    <div class="slideshow__thumbnails" thumbnails>
+        <div class="viewport">
+            <div class="slideshow__thumbnail" ng-repeat="img in $ctrl.images"
+                 ng-class="{'slideshow__thumbnail_active': $ctrl.activeImg === img}"
+                 ng-click="$ctrl.changeImg(img)">
+                <img src="{{img}}" alt="">
+            </div>
         </div>
     </div>
 </div>

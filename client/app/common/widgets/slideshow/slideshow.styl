@@ -1,21 +1,41 @@
 .slideshow
 	&__main-img
 		position relative
-		border 2px solid red
 		height 400px
+		background #FFF
+	&__main-img-wrapper
+		position relative
+		height 400px
+		width 80%
+		margin 0 auto
 		> img
 			position absolute
-			top 0
-			left 0
+			top 50%
 			opacity 0
+			left 0
+			width 100%
 			transition opacity 0.5s
+			margin-top -200px
 	&__thumbnails
-		border 1px solid black
+
+		//overflow-x scroll
+		background-color #FFF
+	.viewport
+		width 100%
+		border 1px solid red
 		display flex
+		flex-wrap nowrap
 	&__thumbnail
 		position relative
 		flex-basis 25%
+		flex-shrink 0
+		opacity .7
+		border-radius 2px
+		transition all .5s
 		> img
 			width 100%
+			border-radius 2px
+	&__thumbnail_active
+		opacity 1
 	&__main-img_active
 		opacity 1 !important

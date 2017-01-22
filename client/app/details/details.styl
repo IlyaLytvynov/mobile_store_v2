@@ -1,14 +1,12 @@
 @import"../variables.styl";
 
-.main
-	min-height 100%
-	background $contentColor
-	position relative
-	display flex
-	max-width $defaultContainerWidth
-	width 100%
-	flex-direction column
-	.header
-		max-width $defaultContainerWidth
-		width 100%
-		border 2px solid #ff00d4
+.details
+	&__content
+		border 1px solid #313131
+	&__specifications
+		border 1px solid blue
+		display flex
+		box-sizing border-box
+		width 100%;
+		> *
+			flex-basis 50%

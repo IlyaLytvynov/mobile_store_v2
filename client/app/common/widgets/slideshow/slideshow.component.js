@@ -8,7 +8,6 @@ class Controller {
     }
 
     $onChanges() {
-        console.log(this.images);
         if(this.images && this.images.length) {
             this.activeImg = this.images[0];
             console.log(this.activeImg)
