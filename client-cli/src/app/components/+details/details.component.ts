@@ -40,20 +40,29 @@ export class DetailsComponent implements OnInit {
         });
 
         viewModel.push({
-            id: Date.now() + Math.ceil(Math.random()*10000),
+            id: Date.now() + Math.ceil(Math.random() * 10000),
             title: 'specification',
-            content: data.description + '!!!!!!'
+            content: this.prepareSpecificationTable(data)
         });
 
         return viewModel;
     }
 
     private prepareSpecificationTable(data: any) {
-        const {size, price, camera, rating, display, weight}= data;
-        const vm = {size, price, camera, rating, display, weight};
+        // const tableTempolate = `<table class="md__spec__table">${tableContent}</table>`;
+        const {sizeAndWeight:size, price, camera, average_rating:rating, display, weight, android:os, battery} = data;
+        const vm = {
+            size: size['dimensions'],
+            price,
+            camera,
+            rating,
+            display,
+            weight: size['weight'],
+            os: os.os,
+        };
         const contentTemplate = '';
 
-        for(let key in vm) {
+        for (let key in vm) {
 
         }
         debugger;

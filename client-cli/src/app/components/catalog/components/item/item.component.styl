@@ -1,4 +1,5 @@
 @import "../../../../app.variables.styl";
+@import "../../../../app.btns.styl";
 
 itemContentDefaultWidth=95%;
 .item
@@ -10,11 +11,12 @@ itemContentDefaultWidth=95%;
 	flex-direction column
 	align-items center
 	justify-content center
-	padding 10px 0;
+	padding 1rem;
 	box-sizing border-box
 	box-shadow defaultBlockShadow;
 	cursor pointer
 	transition transform defaultElementTransitionTimer
+	border-radius @defaultBlocBorderRadius;
 	&:hover
 		z-index 2
 		transform scale(1.01)
@@ -35,3 +37,13 @@ itemContentDefaultWidth=95%;
 		flex-direction column
 		justify-content center
 
+	&__name
+		padding 0 1rem
+		> h4
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			margin 0
+	&__btn
+		width 50%;
+		margin 0 auto

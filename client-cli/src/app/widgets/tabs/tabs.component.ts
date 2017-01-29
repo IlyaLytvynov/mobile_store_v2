@@ -18,8 +18,9 @@ export class TabsComponent implements OnInit {
     @Input() data: any;
     _data: any;
     activeTab: string;
-
+    test: any;
     constructor() {
+        this.test='<h1>Hello world</h1>'
     }
 
     ngOnInit() {
@@ -34,7 +35,6 @@ export class TabsComponent implements OnInit {
     }
 
     changeTab(id) {
-        debugger;
         this.activeTab = id;
     }
 }

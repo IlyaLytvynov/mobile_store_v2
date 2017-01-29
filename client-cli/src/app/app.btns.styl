@@ -15,9 +15,15 @@ $activeBlockShadow=0 1px 4px 0 rgba(117,117,117,.7) inset
 	transition background .3s, color .4s
 	padding 10px 15px
 	cursor pointer
+	text-align center
 	position relative
+	box-sizing border-box
+	width 100%
 	&_add
-		background-color headBgDefaultColor
-		color #FFF
+		color #383838
 		&:active
 			box-shadow $activeBlockShadow
+			background-color headBgDefaultColor
+		&:hover
+			background-color headBgDefaultColor
+			color #FFF
