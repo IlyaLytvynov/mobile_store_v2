@@ -12,8 +12,7 @@
     <div class="tabs__content">
         <div class="tabs__content-tab active"
              *ngFor="let tab of _data"
-             [ngClass]="{'tabs__content-tab_active': activeTab === tab.id}">
-            {{tab.content}}
+             [ngClass]="{'tabs__content-tab_active': activeTab === tab.id}" setHtmlContent [content]="tab.content">
         </div>
     </div>
 </div>

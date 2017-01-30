@@ -4,6 +4,10 @@ import { PhonesService } from '../../core/services/phones.service';
 
 import 'rxjs/add/operator/switchMap';
 
+const createKeyName = (key) => {
+    return key[0].toUpperCase()+key.slice(1);
+};
+
 @Component({
     selector: 'app-details',
     templateUrl: 'details.component.html',
@@ -59,13 +63,32 @@ export class DetailsComponent implements OnInit {
             display,
             weight: size['weight'],
             os: os.os,
+            battery
         };
-        const contentTemplate = '';
+        const contentTemplate = this.prepareTable(vm);
 
-        for (let key in vm) {
-
-        }
-        debugger;
+       return `<table class="md__spec__table">${contentTemplate}</table>`;
     }
 
+    private prepareTable(object) {
+        let tableContent = "";
+        debugger;
+
+        for (let key in object) {
+            if(typeof object[key] === 'object') {
+                tableContent += `<tr class="md_spec-table__section-name"><td>${createKeyName(key)}</td></tr>`;
+                for(let keyIn in object[key]) {
+                    tableContent += this.prepareRow(keyIn, object[key][keyIn]);
+                }
+
+            } else {
+                tableContent+= this.prepareRow(key, object[key]);
+            }
+        }
+        debugger;
+        return tableContent
+    }
+    private prepareRow (key: any, value:any) {
+        return `<tr><td>${!isNaN(parseInt(key)) ? ' ' : createKeyName(key) }</td><td>${value}</td></tr>`;
+    }
 }
