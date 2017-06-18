@@ -1,8 +1,12 @@
-/**
- * Created by IlyaLitvinov on 10.04.17.
- */
-class HelloWorld{
-    constructor() {
-        console.log('Hello wolrd');
+import React, { Component } from 'react';
+import { render } from 'react-dom'
+
+class App extends Component {
+    render () {
+        return <h1>hello World</h1>
     }
 }
+
+const root = document.querySelector('#root');
+
+render(root, App);
