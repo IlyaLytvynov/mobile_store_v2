@@ -1,17 +1,18 @@
-'use strict';
-const path = require("path");
+/**
+ * Created by IlyaLitvinov on 07.04.17.
+ */
+const webpack = require('webpack');
 
-module.exports = function(_path) {
-    return {
-        context: path.normalize(_path),
-        debug: true,
-        devtool: 'source-map',
-        devServer: {
-            contentBase: path.normalize('./build'),
-            info: false,
-            hot: false,
-            inline: true,
-            historyApiFallback: true
-        }
-    }
+const dev = (config, _path) => {
+  config.output.path = _path;
+  config.devServer = {
+    contentBase: _path,
+    compress: true,
+    port: 8080,
+    host: '0.0.0.0',
+    disableHostCheck: true
+  };
+  config.devtool = 'inline-source-map';
+  return config;
 };
+module.exports = dev;
