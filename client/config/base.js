@@ -54,19 +54,23 @@ const baseConf = (_path) => {
             use: ['css-loader','autoprefixer-loader?browsers=last 5 version', 'stylus-loader']
           })
         },
-        {
+          {
 
-          /**
-           * ASSET LOADER
-           * Reference: https://github.com/webpack/file-loader
-           * Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
-           * Rename the file using the asset hash
-           * Pass along the updated reference to your code
-           * You can add here any file extension you want to get copied to your output
-           */
-          test: /\.(png|jpg|jpeg|gif|svg)$/,
-          loader: 'file-loader?name=images/[name].[ext]'
-        }
+              /**
+               * ASSET LOADER
+               * Reference: https://github.com/webpack/file-loader
+               * Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
+               * Rename the file using the asset hash
+               * Pass along the updated reference to your code
+               * You can add here any file extension you want to get copied to your output
+               */
+              test: /\.(png|jpg|jpeg|gif|svg)$/,
+              loader: 'file-loader?publicPath=./&name=assets/images/[name].[ext]'
+          },
+          {
+              test: /\.(eot|ttf|woff|woff2)$/,
+              loader: 'file-loader?publicPath=./&name=assets/fonts/[name].[ext]'
+          }
       ]
     },
 
@@ -75,8 +79,8 @@ const baseConf = (_path) => {
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
     externals: {
-      // "react": "React",
-      // "react-dom": "ReactDOM"
+      "react": "React",
+      "react-dom": "ReactDOM"
     },
 
     plugins: [
