@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { CatalogComponent, ICatalogComponentProps } from './components/Catalog.component';
 import { RouterStore } from 'mobx-react-router';
 import { DomainCatalogStore } from './Catalog.store';
 import { observer } from 'mobx-react';
+import { ProductListComponent } from '../../components/product-list/Product-list.component';
 
 interface IExtProps {
   routing?: RouterStore;
@@ -21,7 +21,7 @@ export class CatalogContainer extends Component<IExtProps, {}> {
     const {products} = this.store;
 
     return (
-      <CatalogComponent products={products}/>
+      <ProductListComponent items={products}/>
     );
   }
 }

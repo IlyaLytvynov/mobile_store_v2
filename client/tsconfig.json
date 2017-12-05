@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./build/",
     "sourceMap": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "types": ["reflect-metadata"],
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -11,7 +11,7 @@
     "target": "es5",
     "jsx": "react",
     "lib": ["es6", "dom"],
-    "strict": false
+    "strict": true
   },
   "include": [
     "./src/**/*"

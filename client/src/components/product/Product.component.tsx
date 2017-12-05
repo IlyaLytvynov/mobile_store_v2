@@ -20,7 +20,7 @@ export class ProductComponent extends Component<ICatalogComponentProps, {}> {
     const {name, price} = this.props.item;
     return (
       <div className='product'>
-
+        {name}
       </div>
     );
   }

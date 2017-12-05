@@ -2,7 +2,7 @@ import { action, computed, observable, toJS } from 'mobx';
 import { appConfigs } from '../../configs/app.config';
 import { get } from '../../utils/Ajax.helper';
 import { Observable } from 'rxjs/Observable';
-import { IProduct } from './components/product-list/product/Product.component';
+import { IProduct } from '../../components/product/Product.component';
 
 export class DomainCatalogStore {
   private _baseUrl: string = appConfigs.baseUrl + '/phones';

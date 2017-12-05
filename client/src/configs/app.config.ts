@@ -1,3 +1,9 @@
 export const appConfigs = {
-  baseUrl: 'http://localhost:4001/api/v1'
+  baseUrl: 'http://localhost:4002/api/v1',
+  navbar: [
+    {
+      link: '/catalog',
+      title: 'catalog'
+    }
+  ]
 };

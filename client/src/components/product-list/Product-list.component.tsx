@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { IProduct, ProductComponent } from './product/Product.component';
+import { IProduct, ProductComponent } from '../product/Product.component';
 
 export interface IProductListComponentProps {
   items: Array<IProduct>;
