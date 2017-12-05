@@ -50,7 +50,6 @@ const getAll = () => {
             });
 
             return Promise.all(promises).then(phones => {
-                debugger;
                 return phones.map(item => {
                     return {
                         _id: item._id,
@@ -61,8 +60,6 @@ const getAll = () => {
                         average_rating: item.average_rating
                     };
                 });
-            }).catch(e => {
-                debugger;
             });
         })
         .catch(e => {
